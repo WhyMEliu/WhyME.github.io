@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liupeng.world/"/>
-  <updated>2019-02-03T02:15:41.774Z</updated>
+  <updated>2019-02-03T03:43:04.956Z</updated>
   <id>http://liupeng.world/</id>
   
   <author>
@@ -21,53 +21,21 @@
     <link href="http://liupeng.world/2019/02/03/%E5%BC%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <id>http://liupeng.world/2019/02/03/开篇博客/</id>
     <published>2019-02-03T01:23:00.000Z</published>
-    <updated>2019-02-03T02:15:41.774Z</updated>
+    <updated>2019-02-03T03:43:04.956Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/images/toux.jpg" width="50%" height="20%"><br>开个博客写点东西</p><p>很久之前就想写博客了</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/images/toux.jpg&quot; width=&quot;50%&quot; height=&quot;20%&quot;&gt;&lt;br&gt;开个博客写点东西&lt;/p&gt;
-&lt;p&gt;很久之前就想写博客了&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>你好，Hexo</title>
-    <link href="http://liupeng.world/2019/02/02/%E4%BD%A0%E5%A5%BD%EF%BC%8CHexo/"/>
-    <id>http://liupeng.world/2019/02/02/你好，Hexo/</id>
-    <published>2019-02-02T02:19:22.000Z</published>
-    <updated>2019-02-02T15:36:10.788Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用Hexo,是非常简单的一件事情</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/images/kaipt.jpg" alt=""><br>开个博客，写写东西。</p><p>很早之间我就想做个博客，写一些技术文档，随笔，却一直没有沉下心来做这件事。</p><p>最近过年才有时间，大概花了1天时间搭建Hexo比想象中的简单多了，之前一直觉得挺麻烦的，也许是因为知识的积累和想拥有一个自己博客的迫切希望才促使我不断的去突破困难搭建完善。</p><p>搭建博客虽然简单，但是持之以恒的去写文章就很难了。我现在开篇立个flag，一周至少更新一篇技术博客，大家监督~</p><p>我一直认为啊~技术宅真的是可以拯救世界的，大家一起加油吧！</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;使用Hexo,是非常简单的一件事情&lt;/p&gt;
-
+        &lt;p&gt;&lt;img src=&quot;/images/kaipt.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;开个博客，写写东西。&lt;/p&gt;
+&lt;p&gt;很早之间我就想做个博客，写一些技术文档，随笔，却一直没有沉下心来做这件事。&lt;/p&gt;
+&lt;p&gt;最近过年才有时间，大概花了1天时间搭建Hexo比想象中的简单多了，之
       
     
     </summary>
     
-      <category term="Hexo" scheme="http://liupeng.world/categories/Hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://liupeng.world/tags/hexo/"/>
-    
-      <category term="github" scheme="http://liupeng.world/tags/github/"/>
-    
-      <category term="npm" scheme="http://liupeng.world/tags/npm/"/>
-    
-      <category term="基础" scheme="http://liupeng.world/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
