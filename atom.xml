@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liupeng.world/"/>
-  <updated>2019-02-02T15:36:10.788Z</updated>
+  <updated>2019-02-03T02:15:41.774Z</updated>
   <id>http://liupeng.world/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开篇博客</title>
+    <link href="http://liupeng.world/2019/02/03/%E5%BC%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://liupeng.world/2019/02/03/开篇博客/</id>
+    <published>2019-02-03T01:23:00.000Z</published>
+    <updated>2019-02-03T02:15:41.774Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/toux.jpg" width="50%" height="20%"><br>开个博客写点东西</p><p>很久之前就想写博客了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/images/toux.jpg&quot; width=&quot;50%&quot; height=&quot;20%&quot;&gt;&lt;br&gt;开个博客写点东西&lt;/p&gt;
+&lt;p&gt;很久之前就想写博客了&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>你好，Hexo</title>
