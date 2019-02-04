@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liupeng.world/"/>
-  <updated>2019-02-04T08:04:50.439Z</updated>
+  <updated>2019-02-04T17:17:50.600Z</updated>
   <id>http://liupeng.world/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新年快乐</title>
+    <link href="http://liupeng.world/2019/02/05/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/"/>
+    <id>http://liupeng.world/2019/02/05/新年快乐/</id>
+    <published>2019-02-04T16:46:00.000Z</published>
+    <updated>2019-02-04T17:17:50.600Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/newYear.jpg" alt=""><br>新年深夜更博~北京四年反省总结<br><a id="more"></a></p><p>在过去一年中，发生了很多大事，家人的离世，房贷的压力，互联网环境的变更，辞职决定去杭州发展，身上的压力是越来越重，我只有不停的学习，不停的进步才能减轻担忧。</p><p>我不是本科，也不是本专业，却走上了程序猿这条路，通过培训获取了当一名程序猿的资格，进了第一家公司不停加班，学习，才让我跟上工作步伐。</p><p>很恨自己中间有一年安逸的日子没有学习，只会玩手机，导致技术的滞后。安逸真的会使人堕落，而我本就没有这样的资格堕落。</p><p>2019新的一年到了，深刻的反省。</p><p>三月份到杭州，我会做一个学习计划，到时候再发博~</p><p>在最后祝大家新年快乐，身体健康，合家团员。</p><p>best wishes:<br>努力的去拥抱生活，让自己变得更好，不要辜负自己的青春，在最灿烂的年纪，绽放最耀眼的光芒。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/newYear.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;新年深夜更博~北京四年反省总结&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="http://liupeng.world/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Apache Bench</title>
