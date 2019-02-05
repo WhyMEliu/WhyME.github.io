@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="发布对象，对象逸出并发问题详解">
+<meta name="description" content="安全发布对象详解~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="发布对象线程安全问题">
-<meta property="og:url" content="http://liupeng.world/2019/02/05/发布对象线程安全问题/index.html">
+<meta property="og:title" content="如何安全发布对象？">
+<meta property="og:url" content="http://liupeng.world/2019/02/05/如何安全发布对象？-1/index.html">
 <meta property="og:site_name" content="PengˇBlog">
-<meta property="og:description" content="发布对象，对象逸出并发问题详解">
+<meta property="og:description" content="安全发布对象详解~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-05T14:42:50.498Z">
+<meta property="og:updated_time" content="2019-02-05T15:44:26.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="发布对象线程安全问题">
-<meta name="twitter:description" content="发布对象，对象逸出并发问题详解">
+<meta name="twitter:title" content="如何安全发布对象？">
+<meta name="twitter:description" content="安全发布对象详解~">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://liupeng.world/2019/02/05/发布对象线程安全问题/">
+  <link rel="canonical" href="http://liupeng.world/2019/02/05/如何安全发布对象？-1/">
 
 
 
 
 
-  <title>发布对象线程安全问题 | PengˇBlog</title>
+  <title>如何安全发布对象？ | PengˇBlog</title>
   
 
 
@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liupeng.world/2019/02/05/发布对象线程安全问题/">
+    <link itemprop="mainEntityOfPage" href="http://liupeng.world/2019/02/05/如何安全发布对象？-1/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="peng">
@@ -313,7 +313,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">发布对象线程安全问题</h2>
+          <h2 class="post-title" itemprop="name headline">如何安全发布对象？</h2>
         
 
         <div class="post-meta">
@@ -325,7 +325,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-05T22:33:41+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-05T23:25:50+08:00">
                 2019-02-05
               </time>
             
@@ -343,7 +343,7 @@
 
           
           
-             <span id="/2019/02/05/发布对象线程安全问题/" class="leancloud_visitors" data-flag-title="发布对象线程安全问题">
+             <span id="/2019/02/05/如何安全发布对象？-1/" class="leancloud_visitors" data-flag-title="如何安全发布对象？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  200
+                  369
                 </span>
               
 
@@ -405,10 +405,16 @@
       
 
       
-        <p>发布对象，对象逸出并发问题详解<br><a id="more"></a></p>
-<h3 id="发布对象（NotThreadSafe）"><a href="#发布对象（NotThreadSafe）" class="headerlink" title="发布对象（NotThreadSafe）"></a>发布对象（NotThreadSafe）</h3><p>使一个对象能够被当前范围之外的代码所使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@Slf4j</span><br><span class="line">@NotThreadSafe</span><br><span class="line">public class UnsafePublish &#123;</span><br><span class="line">	private String[] states = &#123;&quot;a&quot;, &quot;b&quot;, &quot;c&quot;&#125;;</span><br><span class="line">    </span><br><span class="line">	public String[] getStates()&#123;</span><br><span class="line">		return states;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		UnsafePublish unsafePublish = new UnsafePublish();</span><br><span class="line">		log.info(&quot;&#123;&#125;&quot;, Arrays.toString(unsafePublish.getStates()));</span><br><span class="line">		unsafePublish.getStates()[0] = &quot;d&quot;;</span><br><span class="line">		log.info(&quot;&#123;&#125;&quot;, Arrays.toString(unsafePublish.getStates()));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="对象逸出（NotThreadSafe）"><a href="#对象逸出（NotThreadSafe）" class="headerlink" title="对象逸出（NotThreadSafe）"></a>对象逸出（NotThreadSafe）</h3><p>一种错误的发布。当一个对象还没有构建完成时，就使它被其他线程所见。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@NotThreadSafe</span><br><span class="line">@NotRecommend</span><br><span class="line">public class Escape &#123;</span><br><span class="line">	private int thisCanBeEscape = 0;</span><br><span class="line">	</span><br><span class="line">	public Escape ()&#123;</span><br><span class="line">		new InnerClass();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	private class InnerClass &#123;</span><br><span class="line">		public InnerClass()&#123;</span><br><span class="line">			//获取的数据是未创建完的对象数据</span><br><span class="line">			log.info(&quot;&#123;&#125;&quot;, Escape.this.thisCanBeEscape);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		new Escape();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>安全发布对象详解~<br><a id="more"></a></p>
+<ul>
+<li>在静态初始化函数中初始化一个对象引用</li>
+<li>将对象的引用保存到volatile类型域或者AtomicReference对象中</li>
+<li>将对象的引用保存到某个正确构造对象的final类型域中</li>
+<li>将对象的引用保存到一个由锁保护的域中</li>
+</ul>
+<p>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 懒汉模式 -》 双重同步锁单例模式</span><br><span class="line"> * 单例实例在第一次使用时进行创建</span><br><span class="line"> */</span><br><span class="line">@ThreadSafe</span><br><span class="line">public class LazySingleton &#123;</span><br><span class="line"></span><br><span class="line">    // 私有构造函数</span><br><span class="line">    private LazySingleton() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    // 1、memory = allocate() 分配对象的内存空间</span><br><span class="line">    // 2、ctorInstance() 初始化对象</span><br><span class="line">    // 3、instance = memory 设置instance指向刚分配的内存</span><br><span class="line"></span><br><span class="line">    // 单例对象 volatile + 双重检测机制 -&gt; 禁止指令重排</span><br><span class="line">    private volatile static LazySingleton instance = null;</span><br><span class="line"></span><br><span class="line">    // 静态的工厂方法</span><br><span class="line">    public static LazySingleton getInstance() &#123;</span><br><span class="line">        if (instance == null) &#123; // 双重检测机制       </span><br><span class="line">            synchronized (LazySingleton.class) &#123; // 同步锁</span><br><span class="line">                if (instance == null) &#123;</span><br><span class="line">                    instance = new LazySingleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 饿汉模式</span><br><span class="line"> * 单例实例在类装载时进行创建</span><br><span class="line"> */</span><br><span class="line">@ThreadSafe</span><br><span class="line">public class HungrySingleton &#123;</span><br><span class="line"></span><br><span class="line">    // 私有构造函数</span><br><span class="line">    private HungrySingleton() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    // 单例对象</span><br><span class="line">    private static HungrySingleton instance = new HungrySingleton();</span><br><span class="line"></span><br><span class="line">   /*</span><br><span class="line">    private static SingletonExample6 instance = null;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        instance = new SingletonExample6();</span><br><span class="line">    &#125;*/</span><br><span class="line">    </span><br><span class="line">    // 静态的工厂方法</span><br><span class="line">    public static HungrySingleton getInstance() &#123;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 枚举模式：最安全</span><br><span class="line"> */</span><br><span class="line">@ThreadSafe</span><br><span class="line">@Recommend</span><br><span class="line">public class EnumSingleton &#123;</span><br><span class="line"></span><br><span class="line">    // 私有构造函数</span><br><span class="line">    private EnumSingleton() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    public static EnumSingleton getInstance() &#123;</span><br><span class="line">        return Singleton.INSTANCE.getInstance();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private enum Singleton &#123;</span><br><span class="line">        INSTANCE;</span><br><span class="line">        </span><br><span class="line">        private EnumSingleton singleton;</span><br><span class="line">        </span><br><span class="line">        // JVM保证这个方法绝对只调用一次</span><br><span class="line">        Singleton() &#123;</span><br><span class="line">            singleton = new EnumSingleton();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        public EnumSingleton getInstance() &#123;</span><br><span class="line">            return singleton;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -429,7 +435,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://liupeng.world/2019/02/05/发布对象线程安全问题/" title="发布对象线程安全问题">http://liupeng.world/2019/02/05/发布对象线程安全问题/</a>
+    <a href="http://liupeng.world/2019/02/05/如何安全发布对象？-1/" title="如何安全发布对象？">http://liupeng.world/2019/02/05/如何安全发布对象？-1/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -451,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/05/新年快乐/" rel="next" title="新年快乐">
-                <i class="fa fa-chevron-left"></i> 新年快乐
+              <a href="/2019/02/05/发布对象线程安全问题/" rel="next" title="发布对象线程安全问题">
+                <i class="fa fa-chevron-left"></i> 发布对象线程安全问题
               </a>
             
           </div>
@@ -460,10 +466,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/05/如何安全发布对象？-1/" rel="prev" title="如何安全发布对象？">
-                如何安全发布对象？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -519,17 +521,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -604,22 +597,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#发布对象（NotThreadSafe）"><span class="nav-number">1.</span> <span class="nav-text">发布对象（NotThreadSafe）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象逸出（NotThreadSafe）"><span class="nav-number">2.</span> <span class="nav-text">对象逸出（NotThreadSafe）</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
