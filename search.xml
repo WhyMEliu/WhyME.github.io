@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[发布对象线程安全问题]]></title>
+    <url>%2F2019%2F02%2F05%2F%E5%8F%91%E5%B8%83%E5%AF%B9%E8%B1%A1%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[发布对象，对象逸出并发问题详解 发布对象（NotThreadSafe）使一个对象能够被当前范围之外的代码所使用。 12345678910111213141516@Slf4j@NotThreadSafepublic class UnsafePublish &#123; private String[] states = &#123;&quot;a&quot;, &quot;b&quot;, &quot;c&quot;&#125;; public String[] getStates()&#123; return states; &#125; public static void main(String[] args) &#123; UnsafePublish unsafePublish = new UnsafePublish(); log.info(&quot;&#123;&#125;&quot;, Arrays.toString(unsafePublish.getStates())); unsafePublish.getStates()[0] = &quot;d&quot;; log.info(&quot;&#123;&#125;&quot;, Arrays.toString(unsafePublish.getStates())); &#125;&#125; 对象逸出（NotThreadSafe）一种错误的发布。当一个对象还没有构建完成时，就使它被其他线程所见。1234567891011121314151617181920@NotThreadSafe@NotRecommendpublic class Escape &#123; private int thisCanBeEscape = 0; public Escape ()&#123; new InnerClass(); &#125; private class InnerClass &#123; public InnerClass()&#123; //获取的数据是未创建完的对象数据 log.info(&quot;&#123;&#125;&quot;, Escape.this.thisCanBeEscape); &#125; &#125; public static void main(String[] args) &#123; new Escape(); &#125;&#125;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[新年快乐]]></title>
     <url>%2F2019%2F02%2F05%2F%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90%2F</url>
     <content type="text"><![CDATA[新年深夜更博~北京四年反省总结 在过去一年中，发生了很多大事，家人的离世，房贷的压力，互联网环境的变更，辞职决定去杭州发展，身上的压力是越来越重，我只有不停的学习，不停的进步才能减轻担忧。 我不是本科，也不是本专业，却走上了程序猿这条路，通过培训获取了当一名程序猿的资格，进了第一家公司不停加班，学习，才让我跟上工作步伐。 很恨自己中间有一年安逸的日子没有学习，只会玩手机，导致技术的滞后。安逸真的会使人堕落，而我本就没有这样的资格堕落。 2019新的一年到了，深刻的反省。 三月份到杭州，我会做一个学习计划，到时候再发博~ 在最后祝大家新年快乐，身体健康，合家团员。 best wishes:努力的去拥抱生活，让自己变得更好，不要辜负自己的青春，在最灿烂的年纪，绽放最耀眼的光芒。]]></content>
       <categories>
         <category>生活</category>
       </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[HashMap？面试？我是谁？我在哪]]></title>
+    <url>%2F2019%2F02%2F04%2FHashMap%EF%BC%9F%E9%9D%A2%E8%AF%95%EF%BC%9F%E6%88%91%E6%98%AF%E8%B0%81%EF%BC%9F%E6%88%91%E5%9C%A8%E5%93%AA%2F</url>
+    <content type="text"><![CDATA[面试经常被问到做个笔记，emmmmm 为什么用HashMap？ HashMap 是一个散列桶（数组和链表），它存储的内容是键值对 key-value 映射 HashMap 采用了数组和链表的数据结构，能在查询和修改方便继承了数组的线性查找和链表的寻址修改 HashMap 是非 synchronized，所以 HashMap 很快 HashMap 可以接受 null 键和值，而 Hashtable 则不能（原因就是 equlas() 方法需要对象，因为 HashMap 是后出的 API 经过处理才可以） HashMap 的工作原理是什么？HashMap 是基于 hashing 的原理 我们使用 put(key, value) 存储对象到 HashMap 中，使用 get(key) 从 HashMap 中获取对象。当我们给 put() 方法传递键和值时，我们先对键调用 hashCode() 方法，计算并返回的 hashCode 是用于找到 Map 数组的 bucket 位置来储存 Node 对象。 这里关键点在于指出，HashMap 是在 bucket 中储存键对象和值对象，作为Map.Node。 以下是 HashMap 初始化简化的模拟数据结构：1234567Node[] table = new Node[16]; // 散列桶初始化，tableclass Node &#123; hash; //hash值 key; //键 value; //值 node next; //用于指向链表的下一层（产生冲突，用拉链法）&#125; 以下是具体的 put 过程（JDK1.8） 对 Key 求 Hash 值，然后再计算下标 如果没有碰撞，直接放入桶中（碰撞的意思是计算得到的 Hash 值相同，需要放到同一个 bucket 中） 如果碰撞了，以链表的方式链接到后面 如果链表长度超过阀值（TREEIFY THRESHOLD==8），就把链表转成红黑树，链表长度低于6，就把红黑树转回链表 如果节点已经存在就替换旧值 如果桶满了（容量16*加载因子0.75），就需要 resize（扩容2倍后重排）]]></content>
   </entry>
   <entry>
     <title><![CDATA[Apache Bench]]></title>
