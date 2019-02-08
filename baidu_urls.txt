@@ -1,3 +1,5 @@
+http://liupeng.world/2019/02/08/Java线程类测试/
+http://liupeng.world/2019/02/08/Java线程封闭/
 http://liupeng.world/2019/02/07/java不可变对象/
 http://liupeng.world/2019/02/07/jdk，jre你真的懂吗？/
 http://liupeng.world/2019/02/06/中国式的人情社会/

@@ -81,19 +81,17 @@
 
 
 
-<meta name="description" content="面试经常被问到做个笔记，emmmmm">
+<meta name="description" content="对java中的线程安全类及不安全的类进行测试~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HashMap？面试？我是谁？我在哪">
-<meta property="og:url" content="http://liupeng.world/2019/02/04/HashMap？面试？我是谁？我在哪/index.html">
+<meta property="og:title" content="Java线程类测试">
+<meta property="og:url" content="http://liupeng.world/2019/02/08/Java线程类测试/index.html">
 <meta property="og:site_name" content="PengˇBlog">
-<meta property="og:description" content="面试经常被问到做个笔记，emmmmm">
+<meta property="og:description" content="对java中的线程安全类及不安全的类进行测试~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://liupeng.world/images/hashMapBucket.png">
-<meta property="og:updated_time" content="2019-02-04T09:25:17.796Z">
+<meta property="og:updated_time" content="2019-02-08T09:49:28.468Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HashMap？面试？我是谁？我在哪">
-<meta name="twitter:description" content="面试经常被问到做个笔记，emmmmm">
-<meta name="twitter:image" content="http://liupeng.world/images/hashMapBucket.png">
+<meta name="twitter:title" content="Java线程类测试">
+<meta name="twitter:description" content="对java中的线程安全类及不安全的类进行测试~">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://liupeng.world/2019/02/04/HashMap？面试？我是谁？我在哪/">
+  <link rel="canonical" href="http://liupeng.world/2019/02/08/Java线程类测试/">
 
 
 
 
 
-  <title>HashMap？面试？我是谁？我在哪 | PengˇBlog</title>
+  <title>Java线程类测试 | PengˇBlog</title>
   
 
 
@@ -298,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liupeng.world/2019/02/04/HashMap？面试？我是谁？我在哪/">
+    <link itemprop="mainEntityOfPage" href="http://liupeng.world/2019/02/08/Java线程类测试/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="peng">
@@ -315,7 +313,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">HashMap？面试？我是谁？我在哪</h2>
+          <h2 class="post-title" itemprop="name headline">Java线程类测试</h2>
         
 
         <div class="post-meta">
@@ -327,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-04T17:11:44+08:00">
-                2019-02-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-08T17:43:51+08:00">
+                2019-02-08
               </time>
             
 
@@ -345,7 +343,7 @@
 
           
           
-             <span id="/2019/02/04/HashMap？面试？我是谁？我在哪/" class="leancloud_visitors" data-flag-title="HashMap？面试？我是谁？我在哪">
+             <span id="/2019/02/08/Java线程类测试/" class="leancloud_visitors" data-flag-title="Java线程类测试">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -370,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  459
+                  172
                 </span>
               
 
@@ -407,28 +405,18 @@
       
 
       
-        <p>面试经常被问到做个笔记，emmmmm<br><a id="more"></a></p>
-<h3 id="为什么用HashMap？"><a href="#为什么用HashMap？" class="headerlink" title="为什么用HashMap？"></a>为什么用HashMap？</h3><ul>
-<li>HashMap 是一个散列桶（数组和链表），它存储的内容是键值对 key-value 映射</li>
-<li>HashMap 采用了数组和链表的数据结构，能在查询和修改方便继承了数组的线性查找和链表的寻址修改</li>
-<li>HashMap 是非 synchronized，所以 HashMap 很快</li>
-<li>HashMap 可以接受 null 键和值，而 Hashtable 则不能（原因就是 equlas() 方法需要对象，因为 HashMap 是后出的 API 经过处理才可以）</li>
+        <p>对java中的线程安全类及不安全的类进行测试~<br><a id="more"></a></p>
+<ul>
+<li>线程不安全类<ul>
+<li>StringBuilder -&gt; StringBuffer</li>
+<li>SimpleDateFormat -&gt; JodaTime</li>
+<li>ArrayList -&gt; Vector,Stack</li>
+<li>HashMap -&gt; HashTable(key, value不能为null)</li>
+<li>Collections.synchronizedXXX(List, Set, Map)</li>
 </ul>
-<h3 id="HashMap-的工作原理是什么？"><a href="#HashMap-的工作原理是什么？" class="headerlink" title="HashMap 的工作原理是什么？"></a>HashMap 的工作原理是什么？</h3><p><strong>HashMap 是基于 hashing 的原理</strong></p>
-<p>我们使用 put(key, value) 存储对象到 HashMap 中，使用 get(key) 从 HashMap 中获取对象。当我们给 put() 方法传递键和值时，我们先对键调用 hashCode() 方法，计算并返回的 hashCode 是用于找到 Map 数组的 bucket 位置来储存 Node 对象。</p>
-<p>这里关键点在于指出，HashMap 是在 bucket 中储存键对象和值对象，作为Map.Node。</p>
-<p><img src="/images/hashMapBucket.png" alt=""></p>
-<p><strong>以下是 HashMap 初始化</strong><br>简化的模拟数据结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Node[] table = new Node[16]; // 散列桶初始化，table</span><br><span class="line">class Node &#123;</span><br><span class="line">    hash; //hash值</span><br><span class="line">    key; //键</span><br><span class="line">    value; //值</span><br><span class="line">    node next; //用于指向链表的下一层（产生冲突，用拉链法）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以下是具体的 put 过程（JDK1.8）</p>
-<ol>
-<li>对 Key 求 Hash 值，然后再计算下标</li>
-<li>如果没有碰撞，直接放入桶中（碰撞的意思是计算得到的 Hash 值相同，需要放到同一个 bucket 中）</li>
-<li>如果碰撞了，以链表的方式链接到后面</li>
-<li>如果链表长度超过阀值（TREEIFY THRESHOLD==8），就把链表转成红黑树，链表长度低于6，就把红黑树转回链表</li>
-<li>如果节点已经存在就替换旧值</li>
-<li>如果桶满了（容量16*加载因子0.75），就需要 resize（扩容2倍后重排）</li>
-</ol>
-
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">//可以自行进行测试</span><br><span class="line">public class ConcurrencyTest &#123;</span><br><span class="line">	</span><br><span class="line">	//请求总数</span><br><span class="line">	public static int clientTotal = 5000;</span><br><span class="line">	//同时并发执行的线程数</span><br><span class="line">	public static int threadTotal = 200;</span><br><span class="line">	public static int count = 0;</span><br><span class="line">    </span><br><span class="line">	public static void main(String[] args) throws Exception &#123;</span><br><span class="line">		ExecutorService executorService = Executors.newCachedThreadPool();</span><br><span class="line">		final Semaphore semaphore = new Semaphore(threadTotal);</span><br><span class="line">		final CountDownLatch countDownLatch = new CountDownLatch(clientTotal);</span><br><span class="line">		for (int i = 0; i &lt; clientTotal; i++) &#123;</span><br><span class="line">			executorService.execute(() -&gt; &#123;</span><br><span class="line">				try&#123;</span><br><span class="line">					semaphore.acquire();</span><br><span class="line">					add();</span><br><span class="line">					semaphore.release();</span><br><span class="line">				&#125; catch (Exception e)&#123;</span><br><span class="line">					log.error(&quot;exception&quot; , e);</span><br><span class="line">				&#125;</span><br><span class="line">				countDownLatch.countDown();</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">		countDownLatch.await();</span><br><span class="line">		executorService.shutdown();</span><br><span class="line">		log.info(&quot;count:&#123;&#125;&quot; , count);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	private static void add()&#123;</span><br><span class="line">		count++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -448,7 +436,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://liupeng.world/2019/02/04/HashMap？面试？我是谁？我在哪/" title="HashMap？面试？我是谁？我在哪">http://liupeng.world/2019/02/04/HashMap？面试？我是谁？我在哪/</a>
+    <a href="http://liupeng.world/2019/02/08/Java线程类测试/" title="Java线程类测试">http://liupeng.world/2019/02/08/Java线程类测试/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -470,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/03/ApacheBench/" rel="next" title="Apache Bench">
-                <i class="fa fa-chevron-left"></i> Apache Bench
+              <a href="/2019/02/08/Java线程封闭/" rel="next" title="Java线程封闭">
+                <i class="fa fa-chevron-left"></i> Java线程封闭
               </a>
             
           </div>
@@ -479,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/05/新年快乐/" rel="prev" title="新年快乐">
-                新年快乐 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -538,17 +522,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -632,22 +607,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么用HashMap？"><span class="nav-number">1.</span> <span class="nav-text">为什么用HashMap？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap-的工作原理是什么？"><span class="nav-number">2.</span> <span class="nav-text">HashMap 的工作原理是什么？</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

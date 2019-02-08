@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liupeng.world/"/>
-  <updated>2019-02-07T15:04:12.184Z</updated>
+  <updated>2019-02-08T09:49:28.468Z</updated>
   <id>http://liupeng.world/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java线程类测试</title>
+    <link href="http://liupeng.world/2019/02/08/Java%E7%BA%BF%E7%A8%8B%E7%B1%BB%E6%B5%8B%E8%AF%95/"/>
+    <id>http://liupeng.world/2019/02/08/Java线程类测试/</id>
+    <published>2019-02-08T09:43:51.000Z</published>
+    <updated>2019-02-08T09:49:28.468Z</updated>
+    
+    <content type="html"><![CDATA[<p>对java中的线程安全类及不安全的类进行测试~<br><a id="more"></a></p><ul><li>线程不安全类<ul><li>StringBuilder -&gt; StringBuffer</li><li>SimpleDateFormat -&gt; JodaTime</li><li>ArrayList -&gt; Vector,Stack</li><li>HashMap -&gt; HashTable(key, value不能为null)</li><li>Collections.synchronizedXXX(List, Set, Map)</li></ul></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">//可以自行进行测试</span><br><span class="line">public class ConcurrencyTest &#123;</span><br><span class="line"></span><br><span class="line">//请求总数</span><br><span class="line">public static int clientTotal = 5000;</span><br><span class="line">//同时并发执行的线程数</span><br><span class="line">public static int threadTotal = 200;</span><br><span class="line">public static int count = 0;</span><br><span class="line">    </span><br><span class="line">public static void main(String[] args) throws Exception &#123;</span><br><span class="line">ExecutorService executorService = Executors.newCachedThreadPool();</span><br><span class="line">final Semaphore semaphore = new Semaphore(threadTotal);</span><br><span class="line">final CountDownLatch countDownLatch = new CountDownLatch(clientTotal);</span><br><span class="line">for (int i = 0; i &lt; clientTotal; i++) &#123;</span><br><span class="line">executorService.execute(() -&gt; &#123;</span><br><span class="line">try&#123;</span><br><span class="line">semaphore.acquire();</span><br><span class="line">add();</span><br><span class="line">semaphore.release();</span><br><span class="line">&#125; catch (Exception e)&#123;</span><br><span class="line">log.error(&quot;exception&quot; , e);</span><br><span class="line">&#125;</span><br><span class="line">countDownLatch.countDown();</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line">countDownLatch.await();</span><br><span class="line">executorService.shutdown();</span><br><span class="line">log.info(&quot;count:&#123;&#125;&quot; , count);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void add()&#123;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对java中的线程安全类及不安全的类进行测试~&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java线程封闭</title>
+    <link href="http://liupeng.world/2019/02/08/Java%E7%BA%BF%E7%A8%8B%E5%B0%81%E9%97%AD/"/>
+    <id>http://liupeng.world/2019/02/08/Java线程封闭/</id>
+    <published>2019-02-08T07:59:00.000Z</published>
+    <updated>2019-02-08T08:10:26.750Z</updated>
+    
+    <content type="html"><![CDATA[<p>java是如何保持线程之间的不互相干扰？<br><a id="more"></a></p><ul><li>线程封闭<ul><li>Ad-hoc线程封闭：程序控制，最糟糕，忽略</li><li>堆栈封闭：局部变量(利用不同的虚拟机栈副本存储)</li><li>ThreadLocal线程封闭：特别好的封闭方法</li></ul></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//ThreadLocal线程封闭</span><br><span class="line">public class RequestHolder &#123;</span><br><span class="line"></span><br><span class="line">private final static ThreadLocal&lt;Long&gt; requestHolder = new ThreadLocal&lt;Long&gt;();</span><br><span class="line"></span><br><span class="line">public static void add(Long id)&#123;</span><br><span class="line">requestHolder.set(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static Long getId()&#123;</span><br><span class="line">      //自动获取key(当前线程对象地址),找出value值返回</span><br><span class="line">return requestHolder.get();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void remove()&#123;</span><br><span class="line">      //数据会一直存到项目重启</span><br><span class="line">      //数据一定要移除，避免产生内存溢出(oom)</span><br><span class="line">requestHolder.remove();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;java是如何保持线程之间的不互相干扰？&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://liupeng.world/categories/Java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java不可变对象</title>
