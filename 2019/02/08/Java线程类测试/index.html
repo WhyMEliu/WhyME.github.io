@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="PengˇBlog">
 <meta property="og:description" content="对java中的线程安全类及不安全的类进行测试~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-08T09:52:23.756Z">
+<meta property="og:updated_time" content="2019-02-08T12:59:55.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java线程类测试">
 <meta name="twitter:description" content="对java中的线程安全类及不安全的类进行测试~">
@@ -390,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  172
+                  193
                 </span>
               
 
@@ -432,9 +432,18 @@
 <li>线程不安全类<ul>
 <li>StringBuilder -&gt; StringBuffer</li>
 <li>SimpleDateFormat -&gt; JodaTime</li>
+</ul>
+</li>
+<li>同步容器<ul>
 <li>ArrayList -&gt; Vector,Stack</li>
 <li>HashMap -&gt; HashTable(key, value不能为null)</li>
 <li>Collections.synchronizedXXX(List, Set, Map)</li>
+</ul>
+</li>
+<li>并发容器<ul>
+<li>ArrayList -&gt; CopyOnWriteArrayList</li>
+<li>HashSet,TreeSet -&gt; CopyOnWriteArraySet,ConcurrentSkipListSet</li>
+<li>HashMap,TreeMap -&gt; ConcurrentHashMap,ConcurrentSkipListMap</li>
 </ul>
 </li>
 </ul>
