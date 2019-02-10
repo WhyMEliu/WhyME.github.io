@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://liupeng.world/2019/02/10/ReentrantLock%E4%B8%8E%E9%94%81/</loc>
+    
+    <lastmod>2019-02-10T02:14:05.128Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://liupeng.world/2019/02/08/Java%E7%BA%BF%E7%A8%8B%E7%B1%BB%E6%B5%8B%E8%AF%95/</loc>
     
     <lastmod>2019-02-08T12:59:55.435Z</lastmod>
