@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liupeng.world/"/>
-  <updated>2019-02-10T02:14:05.128Z</updated>
+  <updated>2019-02-13T13:27:44.184Z</updated>
   <id>http://liupeng.world/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OSI参考模型图</title>
+    <link href="http://liupeng.world/2019/02/13/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B%E5%9B%BE/"/>
+    <id>http://liupeng.world/2019/02/13/OSI参考模型图/</id>
+    <published>2019-02-13T13:25:29.000Z</published>
+    <updated>2019-02-13T13:27:44.184Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一张很长很详细的图~<br><a id="more"></a><br><img src="/images/osi.gif" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一张很长很详细的图~&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ReentrantLock与锁</title>
