@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="study">
+  <meta name="keywords" content="IO,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="关于jdk和jre  大家肯定在安装JDK的时候会有选择是否安装单独的jre，一般都会一起安装，我也建议大家这样做。因为这样更能帮助大家弄清楚它们的区别：">
+<meta name="description" content="写法详解~">
+<meta name="keywords" content="IO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jdk，jre你真的懂吗？">
-<meta property="og:url" content="http://liupeng.world/2019/02/07/jdk，jre你真的懂吗？/index.html">
+<meta property="og:title" content="BIO,NIO,AIO写法记录">
+<meta property="og:url" content="http://liupeng.world/2019/02/24/BIO-NIO-AIO写法记录/index.html">
 <meta property="og:site_name" content="PengˇBlog">
-<meta property="og:description" content="关于jdk和jre  大家肯定在安装JDK的时候会有选择是否安装单独的jre，一般都会一起安装，我也建议大家这样做。因为这样更能帮助大家弄清楚它们的区别：">
+<meta property="og:description" content="写法详解~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-07T14:40:01.384Z">
+<meta property="og:updated_time" content="2019-02-24T11:55:57.559Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jdk，jre你真的懂吗？">
-<meta name="twitter:description" content="关于jdk和jre  大家肯定在安装JDK的时候会有选择是否安装单独的jre，一般都会一起安装，我也建议大家这样做。因为这样更能帮助大家弄清楚它们的区别：">
+<meta name="twitter:title" content="BIO,NIO,AIO写法记录">
+<meta name="twitter:description" content="写法详解~">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://liupeng.world/2019/02/07/jdk，jre你真的懂吗？/">
+  <link rel="canonical" href="http://liupeng.world/2019/02/24/BIO-NIO-AIO写法记录/">
 
 
 
 
 
-  <title>jdk，jre你真的懂吗？ | PengˇBlog</title>
+  <title>BIO,NIO,AIO写法记录 | PengˇBlog</title>
   
 
 
@@ -296,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liupeng.world/2019/02/07/jdk，jre你真的懂吗？/">
+    <link itemprop="mainEntityOfPage" href="http://liupeng.world/2019/02/24/BIO-NIO-AIO写法记录/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="peng">
@@ -313,7 +314,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">jdk，jre你真的懂吗？</h2>
+          <h2 class="post-title" itemprop="name headline">BIO,NIO,AIO写法记录</h2>
         
 
         <div class="post-meta">
@@ -325,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-07T22:19:00+08:00">
-                2019-02-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-24T18:21:00+08:00">
+                2019-02-24
               </time>
             
 
@@ -365,7 +366,7 @@
 
           
           
-             <span id="/2019/02/07/jdk，jre你真的懂吗？/" class="leancloud_visitors" data-flag-title="jdk，jre你真的懂吗？">
+             <span id="/2019/02/24/BIO-NIO-AIO写法记录/" class="leancloud_visitors" data-flag-title="BIO,NIO,AIO写法记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.6k
+                  1.1k
                 </span>
               
 
@@ -406,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  5
                 </span>
               
             </div>
@@ -427,48 +428,10 @@
       
 
       
-        <p>关于jdk和jre </p>
-<p>大家肯定在安装JDK的时候会有选择是否安装单独的jre，一般都会一起安装，我也建议大家这样做。因为这样更能帮助大家弄清楚它们的区别：<br><a id="more"></a><br>Jre 是java runtime environment, 是java程序的运行环境。既然是运行，当然要包含jvm，也就是大家熟悉的虚拟机啦，还有所有java类库的class文件，都在lib目录下打包成了jar。大家可以自己验证。至于在windows上的虚拟机是哪个文件呢？学过MFC的都知道什么是dll文件吧，那么大家看看jre/bin/client里面是不是有一个jvm.dll呢？那就是虚拟机。 </p>
-<p>Jdk 是java development kit，是java的开发工具包，里面包含了各种类库和工具。当然也包括了另外一个Jre. 那么为什么要包括另外一个Jre呢？而且jdk/jre/bin同时有client和server两个文件夹下都包含一个jvm.dll。说明是有两个虚拟机的。这一点不知道大家是否注意到了呢？ </p>
-<p>相信大家都知道jdk的bin下有各种java程序需要用到的命令，与jre的bin目录最明显的区别就是jdk下才有javac，这一点很好理解，因为 jre只是一个运行环境而已。与开发无关，正因为如此，具备开发功能的jdk自己的jre下才会同时有client性质的jvm和server性质的 jvm， 而仅仅作为运行环境的jre下只需要client性质的jvm.dll就够了。 </p>
-<p>记得在环境变量path中设置jdk/bin路径麽？这应该是大家学习Java的第一步吧，老师会告诉大家不设置的话javac和java是用不了的。确实jdk/bin目录下包含了所有的命令。可是有没有人想过我们用的java命令并不是 jdk/bin目录下的而是jre/bin目录下的呢？不信可以做一个实验，大家可以把jdk/bin目录下的java.exe剪切到别的地方再运行 java程序，发现了什么？一切OK！ </p>
-<p>那么有人会问了？我明明没有设置jre/bin目录到环境变量中啊？ </p>
-<p>试想一下如果java为了提供给大多数人使用，他们是不需要jdk做开发的，只需要jre能让java程序跑起来就可以了，那么每个客户还需要手动去设置环境变量多麻烦啊？所以安装jre的时候安装程序自动帮你把jre的java.exe添加到了系统变量中，验证的方法很简单，大家看到了系统环境变量的 path最前面有“%SystemRoot%system32;%SystemRoot%;”这样的配置，那么再去Windows/system32下面去看看吧，发现了什么？有一个java.exe。 </p>
-<p>如果强行能够把jdk/bin挪到system32变量前面，当然也可以迫使使用jdk/jre里面的java，不过除非有必要，我不建议大家这么做。使用单独的jre跑java程序也算是客户环境下的一种测试。 </p>
-<p>——————————————————————————————————————————— </p>
-<p>通俗点来说： jdk是java的开发包，其中包括jre;jre仅仅是java的运行时环境；而JDK包括了同版本的JRE，此外还包括有编译器和其它工具 </p>
-<p><strong>JDK是java开发工具包(java Development Kit)的缩写。它是一种构建在java平台上发布的应用程序、apple和组件的开发环境。JDK是一切java应用程序的基础，所有的java应用程序是构建在这个之上的。它是一组API，也可以说是一些java Class。要成为一个Java程序员，JDK是必不可少的最基本的工具。</strong></p>
-<p><strong>JRE是Java运行环境(Java Runtime Enviroment)的缩写。它基本上就和Java虚拟机是同一个概念。一般来说，在谈论一个具体的产品的时候，可以说“JRE”,而说到理论中的一个模型的时候，我们常用的是“Java虚拟机”。要使用Java程序，JRE是必不可少的环境。</strong></p>
-<p>如果机子里安装了多个版本的jdk，如下： </p>
-<p>BEA Weblogic Server 7.0 自带一套 JDK1.3.1_02<br>下载了一套最新的JDK1.4.1_02<br>JBuilder9自带一套JKD1.4.1_02<br>Oracle8.1.7自带一套JRE1.1.7<br>Ration Rose自带一套JDK1.3<br>DreamWeaver自带一套JDK1.3 </p>
-<p>6套JRE，每套JRE都被各自安装到不同的目录，不会互相影响。当在控制台执行java.exe，操作系统寻找JRE的方式如下：</p>
-<p>先找当前目录下有没有JRE<br>再找父目录下有没有JRE<br>接着在PATH路径中找JRE（一般运行时从path中查找，按照path设置前后顺序，以前面为准）<br>注册表HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Runtime Environment\ 查看CurrentVersion的键值指向哪个JRE（一般XP下是这个：C:\Program Files\Java\jre6）</p>
-<p>最常用的是在PATH路径中找JRE，一般情况下，自己的程序运行之前都会先在批处理文件里面临时设置PATH，把自己用的JRE放到PATH路径最前面，所以肯定会运行自己带的JRE，不会造成版本混乱。 </p>
-<p>——————————————————————————————————————————————<br>JDK就是Java Development Kit.简单的说JDK是面向开发人员使用的SDK，它提供了Java的开发环境和运行环境。SDK是Software Development Kit 一般指软件开发包，可以包括函数库、编译程序等。 </p>
-<p>JRE是Java Runtime Enviroment是指Java的运行环境，是面向Java程序的使用者，而不是开发者。 </p>
-<p>如果安装了JDK，会发同你的电脑有两套JRE，一套位于 \jre 另外一套位于 C:\Program Files\Java\jre1.5.0_15 目录下，后面这套比前面那套少了Server端的Java虚拟机，不过直接将前面那套的Server端Java虚拟机复制过来就行了。而且在安装JDK可以选择是否安装这个位于 C:\Program Files\Java 目录下的JRE。如果你只安装JRE，而不是JDK，那么只会在 C:\Program Files\Java 目录下安装唯一的一套JRE。 </p>
-<p>JRE的地位就象一台PC机一样，我们写好的Win32应用程序需要操作系统帮我们运行，同样的，我们编写的Java程序也必须要JRE才能运行。所以当你装完JDK后，如果分别在硬盘上的两个不同地方安装了两套JRE，那么你可以想象你的电脑有两台虚拟的Java PC机，都具有运行Java程序的功能。所以我们可以说，只要你的电脑安装了JRE，就可以正确运行Java应用程序。</p>
-<ol>
-<li>为什么Sun要让JDK安装两套相同的JRE？ </li>
-</ol>
-<p>这是因为JDK里面有很多用Java所编写的开发工具（如javac.exe、jar.exe等），而且都放置在 \lib\tools.jar 里。从下面例子可以看出，先将tools.jar改名为tools1.jar，然后运行javac.exe，显示如下结果： Exception in thread “main” java.lang.NoClassDefFoundError: com/sun/tools/javac /Main 这个意思是说，你输入javac.exe与输入 java -cp c:\jdk\lib\tools.jar com.sun.tools.javac.Main 是一样的，会得到相同的结果。从这里我们可以证明javac.exe只是一个包装器（Wrapper），而制作的目的是为了让开发者免于输入太长的指命。而且可以发现\lib目录下的程序都很小，不大于2 9K，从这里我们可以得出一个结论。就是JDK里的工具几乎是用Java所编写，所以也是Java应用程序，因此要使用JDK所附的工具来开发Java程序，也必须要自行附一套JRE才行，所以位于C:\Program Files\Java目录下的那套JRE就是用来运行一般Java程序用的。 </p>
-<ol start="2">
-<li>如果一台电脑安装两套以上的JRE，谁来决定呢？ </li>
-</ol>
-<p>这个重大任务就落在java.exe身上。Java.exe的工作就是找到合适的JRE来运行Java程序。 Java.exe依照底下的顺序来查找JRE：自己的目录下有没有JRE；父目录有没有JRE；查询注册表： [HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Runtime Environment] 所以java.exe的运行结果与你的电脑里面哪个JRE被执行有很大的关系。 </p>
-<p>ADD：（小小结） </p>
-<ol>
-<li><p>JVM – java virtual machineJVM就是我们常说的java虚拟机，它是整个java实现跨平台的最核心的部分，所有的java程序会首先被编译为.class的类文件，这种类文件可以在虚拟机上执行，也就是说class并不直接与机器的操作系统相对应，而是经过虚拟机间接与操作系统交互，由虚拟机将程序解释给本地系统执行。</p>
-</li>
-<li><p>JRE – java runtime environmentJRE是指java运行环境。光有JVM还不能成class的执行，因为在解释class的时候JVM需要调用解释所需要的类库lib。在JDK的安装目录里你可以找到jre目录，里面有两个文件夹bin和lib,在这里可以认为bin里的就是jvm，lib中则是jvm工作所需要的类库，而jvm和 lib和起来就称为jre。所以，在你写完java程序编译成.class之后，你可以把这个.class文件和jre一起打包发给朋友，这样你的朋友就可以运行你写程序了。（jre里有运行.class的java.exe）</p>
-</li>
-<li><p>JDK – java development kitJDK是java开发工具包，基本上每个学java的人都会先在机器上装一个JDK，那他都包含哪几部分呢？让我们看一下JDK的安装目录。在目录下面有六个文件夹、一个src类库源码压缩包、和其他几个声明文件。其中，真正在运行java时起作用的是以下四个文件夹：bin、include、lib、 jre。现在我们可以看出这样一个关系，JDK包含JRE，而JRE包含JVM。bin:最主要的是编译器(javac.exe)include:java和JVM交互用的头文件lib：类库jre:java运行环境（注意：这里的bin、lib文件夹和jre里的bin、lib是不同的）总的来说JDK是用于java程序的开发,而jre则是只能运行class而没有编译的功能。 </p>
-</li>
-<li><p>eclipse、idea等其他IDE有自己的编译器而不是用JDK bin目录中自带的，所以在安装时你会发现他们只要求你选中jre路径就ok了。 </p>
-</li>
-</ol>
-<p align="right"><a href="https://ihyperwin.iteye.com/blog/1513754" target="_blank" rel="noopener">ITeye原文</a></p>
-
+        <p>写法详解~<br><a id="more"></a></p>
+<h3 id="BIO"><a href="#BIO" class="headerlink" title="BIO"></a>BIO</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">public class BIOPlainEchoServer &#123;</span><br><span class="line">    public void serve(int port) throws IOException &#123;</span><br><span class="line">        //将ServerSocket绑定到指定的端口里</span><br><span class="line">        final ServerSocket socket = new ServerSocket(port);</span><br><span class="line">        while (true) &#123;</span><br><span class="line">            //阻塞直到收到新的客户端连接</span><br><span class="line">            final Socket clientSocket = socket.accept();</span><br><span class="line">            System.out.println(&quot;Accepted connection from &quot; + clientSocket);</span><br><span class="line">            //创建一个子线程去处理客户端的请求</span><br><span class="line">            new Thread(new Runnable() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public void run() &#123;</span><br><span class="line">                    try (BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) &#123;</span><br><span class="line">                        PrintWriter writer = new PrintWriter(clientSocket.getOutputStream(), true);</span><br><span class="line">                        //从客户端读取数据并原封不动回写回去</span><br><span class="line">                        while (true) &#123;</span><br><span class="line">                            writer.println(reader.readLine());</span><br><span class="line">                            writer.flush();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; catch (IOException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void improvedServe(int port) throws IOException &#123;</span><br><span class="line">        //将ServerSocket绑定到指定的端口里</span><br><span class="line">        final ServerSocket socket = new ServerSocket(port);</span><br><span class="line">        //创建一个线程池</span><br><span class="line">        ExecutorService executorService = Executors.newFixedThreadPool(6);</span><br><span class="line">        while (true) &#123;</span><br><span class="line">            //阻塞直到收到新的客户端连接</span><br><span class="line">            final Socket clientSocket = socket.accept();</span><br><span class="line">            System.out.println(&quot;Accepted connection from &quot; + clientSocket);</span><br><span class="line">            //将请求提交给线程池去执行</span><br><span class="line">            executorService.execute(() -&gt; &#123;</span><br><span class="line">                try (BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) &#123;</span><br><span class="line">                    PrintWriter writer = new PrintWriter(clientSocket.getOutputStream(),true);</span><br><span class="line">                    //从客户端读取数据并原封不动回写回去</span><br><span class="line">                    while (true) &#123;</span><br><span class="line">                        writer.println(reader.readLine());</span><br><span class="line">                        writer.flush();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="NIO"><a href="#NIO" class="headerlink" title="NIO"></a>NIO</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">public class NIOPlainEchoServer &#123;</span><br><span class="line">    public void serve(int port) throws IOException &#123;</span><br><span class="line">        System.out.println(&quot;Listening for connections on port &quot; + port);</span><br><span class="line">        ServerSocketChannel serverChannel = ServerSocketChannel.open();</span><br><span class="line">        ServerSocket ss = serverChannel.socket();</span><br><span class="line">        InetSocketAddress address = new InetSocketAddress(port);</span><br><span class="line">        //将ServerSocket绑定到指定的端口里</span><br><span class="line">        ss.bind(address);</span><br><span class="line">        serverChannel.configureBlocking(false);</span><br><span class="line">        Selector selector = Selector.open();</span><br><span class="line">        //将channel注册到Selector里，并说明让Selector关注的点，这里是关注建立连接这个事件</span><br><span class="line">        serverChannel.register(selector, SelectionKey.OP_ACCEPT);</span><br><span class="line">        while (true) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                //阻塞等待就绪的Channel，即没有与客户端建立连接前就一直轮询</span><br><span class="line">                selector.select();</span><br><span class="line">            &#125; catch (IOException ex) &#123;</span><br><span class="line">                ex.printStackTrace();</span><br><span class="line">                //代码省略的部分是结合业务，正确处理异常的逻辑</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            //获取到Selector里所有就绪的SelectedKey实例,每将一个channel注册到一个selector就会产生一个SelectedKey</span><br><span class="line">            Set&lt;SelectionKey&gt; readyKeys = selector.selectedKeys();</span><br><span class="line">            Iterator&lt;SelectionKey&gt; iterator = readyKeys.iterator();</span><br><span class="line">            while (iterator.hasNext()) &#123;</span><br><span class="line">                SelectionKey key = (SelectionKey) iterator.next();</span><br><span class="line">                //将就绪的SelectedKey从Selector中移除，因为马上就要去处理它，防止重复执行</span><br><span class="line">                iterator.remove();</span><br><span class="line">                try &#123;</span><br><span class="line">                    //若SelectedKey处于Acceptable状态</span><br><span class="line">                    if (key.isAcceptable()) &#123;</span><br><span class="line">                        ServerSocketChannel server = (ServerSocketChannel) key.channel();</span><br><span class="line">                        //接受客户端的连接</span><br><span class="line">                        SocketChannel client = server.accept();</span><br><span class="line">                        System.out.println(&quot;Accepted connection from &quot; + client);</span><br><span class="line">                        client.configureBlocking(false);</span><br><span class="line">                        //像selector注册socketchannel，主要关注读写，并传入一个ByteBuffer实例供读写缓存</span><br><span class="line">                        client.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ, ByteBuffer.allocate(100));</span><br><span class="line">                    &#125;</span><br><span class="line">                    //若SelectedKey处于可读状态</span><br><span class="line">                    if (key.isReadable()) &#123;</span><br><span class="line">                        SocketChannel client = (SocketChannel) key.channel();</span><br><span class="line">                        ByteBuffer output = (ByteBuffer) key.attachment();</span><br><span class="line">                        //从channel里读取数据存入到ByteBuffer里面</span><br><span class="line">                        client.read(output);</span><br><span class="line">                    &#125;</span><br><span class="line">                    //若SelectedKey处于可写状态</span><br><span class="line">                    if (key.isWritable()) &#123;</span><br><span class="line">                        SocketChannel client = (SocketChannel) key.channel();</span><br><span class="line">                        ByteBuffer output = (ByteBuffer) key.attachment();</span><br><span class="line">                        output.flip();</span><br><span class="line">                        //将ByteBuffer里的数据写入到channel里</span><br><span class="line">                        client.write(output);</span><br><span class="line">                        output.compact();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; catch (IOException ex) &#123;</span><br><span class="line">                    key.cancel();</span><br><span class="line">                    try &#123;</span><br><span class="line">                        key.channel().close();</span><br><span class="line">                    &#125; catch (IOException cex) &#123;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="AIO"><a href="#AIO" class="headerlink" title="AIO"></a>AIO</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">public class AIOPlainEchoServer &#123;</span><br><span class="line">    public void serve(int port) throws IOException &#123;</span><br><span class="line">        System.out.println(&quot;Listening for connections on port &quot; + port);</span><br><span class="line">        final AsynchronousServerSocketChannel serverChannel = AsynchronousServerSocketChannel.open();</span><br><span class="line">        InetSocketAddress address = new InetSocketAddress(port);</span><br><span class="line">        // 将ServerSocket绑定到指定的端口里</span><br><span class="line">        serverChannel.bind(address);</span><br><span class="line">        final CountDownLatch latch = new CountDownLatch(1);</span><br><span class="line">        // 开始接收新的客户端请求. 一旦一个客户端请求被接收， CompletionHandler 就会被调用.</span><br><span class="line">        serverChannel.accept(null, new CompletionHandler&lt;AsynchronousSocketChannel, Object&gt;() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void completed(final AsynchronousSocketChannel channel, Object attachment) &#123;</span><br><span class="line">                // 一旦完成处理，再次接收新的客户端请求</span><br><span class="line">                serverChannel.accept(null, this);</span><br><span class="line">                ByteBuffer buffer = ByteBuffer.allocate(100);</span><br><span class="line">                // 在channel里植入一个读操作EchoCompletionHandler，一旦buffer有数据写入，EchoCompletionHandler 便会被唤醒</span><br><span class="line">                channel.read(buffer, buffer, new EchoCompletionHandler(channel));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void failed(Throwable throwable, Object attachment) &#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    // 若遇到异常，关闭channel</span><br><span class="line">                    serverChannel.close();</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    // ingnore on close</span><br><span class="line">                &#125; finally &#123;</span><br><span class="line">                    latch.countDown();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        try &#123;</span><br><span class="line">            latch.await();</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            Thread.currentThread().interrupt();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private final class EchoCompletionHandler implements CompletionHandler&lt;Integer, ByteBuffer&gt; &#123;</span><br><span class="line">        private final AsynchronousSocketChannel channel;</span><br><span class="line"></span><br><span class="line">        EchoCompletionHandler(AsynchronousSocketChannel channel) &#123;</span><br><span class="line">            this.channel = channel;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void completed(Integer result, ByteBuffer buffer) &#123;</span><br><span class="line">            buffer.flip();</span><br><span class="line">            // 在channel里植入一个读操作CompletionHandler，一旦channel有数据写入，CompletionHandler 便会被唤醒</span><br><span class="line">            channel.write(buffer, buffer, new CompletionHandler&lt;Integer, ByteBuffer&gt;() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public void completed(Integer result, ByteBuffer buffer) &#123;</span><br><span class="line">                    if (buffer.hasRemaining()) &#123;</span><br><span class="line">                        // 如果buffer里还有内容，则再次触发写入操作将buffer里的内容写入channel</span><br><span class="line">                        channel.write(buffer, buffer, this);</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        buffer.compact();</span><br><span class="line">                        // 如果channel里还有内容需要读入到buffer里，则再次触发写入操作将channel里的内容读入buffer</span><br><span class="line">                        channel.read(buffer, buffer, EchoCompletionHandler.this);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                @Override</span><br><span class="line">                public void failed(Throwable exc, ByteBuffer attachment) &#123;</span><br><span class="line">                    try &#123;</span><br><span class="line">                        channel.close();</span><br><span class="line">                    &#125; catch (IOException e) &#123;</span><br><span class="line">                        // ingnore on close</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void failed(Throwable exc, ByteBuffer attachment) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                channel.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                // ingnore on close</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -488,7 +451,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://liupeng.world/2019/02/07/jdk，jre你真的懂吗？/" title="jdk，jre你真的懂吗？">http://liupeng.world/2019/02/07/jdk，jre你真的懂吗？/</a>
+    <a href="http://liupeng.world/2019/02/24/BIO-NIO-AIO写法记录/" title="BIO,NIO,AIO写法记录">http://liupeng.world/2019/02/24/BIO-NIO-AIO写法记录/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -501,6 +464,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/IO/" rel="tag"># IO</a>
+          
+        </div>
+      
 
       
       
@@ -510,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/05/如何安全发布对象？/" rel="next" title="如何安全发布对象？">
-                <i class="fa fa-chevron-left"></i> 如何安全发布对象？
+              <a href="/2019/02/17/Linux常用命令/" rel="next" title="Linux常用命令">
+                <i class="fa fa-chevron-left"></i> Linux常用命令
               </a>
             
           </div>
@@ -519,10 +488,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/07/java不可变对象/" rel="prev" title="Java不可变对象">
-                Java不可变对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -578,8 +543,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -663,6 +637,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#BIO"><span class="nav-number">1.</span> <span class="nav-text">BIO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NIO"><span class="nav-number">2.</span> <span class="nav-text">NIO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AIO"><span class="nav-number">3.</span> <span class="nav-text">AIO</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
