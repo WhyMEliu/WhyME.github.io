@@ -504,7 +504,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/19/webpack入门/" itemprop="url">webpack入门</a></h2>
+                <a class="post-title-link" href="/2019/09/19/webpack入门/" itemprop="url">Webpack入门</a></h2>
         
 
         <div class="post-meta">
@@ -556,7 +556,7 @@
 
           
           
-             <span id="/2019/09/19/webpack入门/" class="leancloud_visitors" data-flag-title="webpack入门">
+             <span id="/2019/09/19/webpack入门/" class="leancloud_visitors" data-flag-title="Webpack入门">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -581,7 +581,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  333
+                  343
                 </span>
               
 
@@ -619,28 +619,17 @@
 
       
         
-          
-            <h2 id="webpack入门"><a href="#webpack入门" class="headerlink" title="webpack入门"></a>webpack入门</h2><p><a href="https://www.webpackjs.com/concepts/" target="_blank" rel="noopener">中文文档</a>  <a href="https://webpack.js.org/concepts/" target="_blank" rel="noopener">英文文档</a></p>
-<h3 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h3><p>主要用于模块打包工具（ES Module，CommonJS，CMD，ADM）</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
-<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs</a></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>webpack</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>前提</span><br><span class="line"><span class="meta">$</span> mkdir webpack-demo</span><br><span class="line"><span class="meta">$</span> cd webpack-demo</span><br><span class="line"><span class="meta">$</span> npm init</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>全局安装</span><br><span class="line"><span class="meta">$</span> npm install webpack webpack-cli -g</span><br><span class="line"><span class="meta">$</span> npm uninstall webpack webpack-cli -g</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>项目中安装</span><br><span class="line">~/Desktop/webpack-demo</span><br><span class="line"><span class="meta">$</span> npm install webpack webpack-cli -D</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>项目中不同版本安装</span><br><span class="line">~/Desktop/webpack-demo2</span><br><span class="line"><span class="meta">$</span> npm info webpack</span><br><span class="line"><span class="meta">$</span> npm install webpack@3.10.0 webpack-cli -D</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>检查项目安装webpack是否成功</span><br><span class="line">~/Desktop/webpack-demo2</span><br><span class="line"><span class="meta">$</span> npx webpack -v</span><br></pre></td></tr></table></figure>
-<p>package.json文件修改</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"webpack-demo"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">  	<span class="attr">"bundle"</span>: <span class="string">"webpack"</span>				//npm run bundle</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="string">"author"</span>: <span class="string">"liupeng"</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>webpack.config.js          //文件名默认就行，最好不要改</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports =&#123;</span><br><span class="line">    mode: <span class="string">'production'</span>,								<span class="comment">//模式配置（pro,dev）正式环境压缩</span></span><br><span class="line">	entry: &#123;										<span class="comment">//打包入口</span></span><br><span class="line">     main: <span class="string">'./src/index.js'</span>   </span><br><span class="line">    &#125;,						</span><br><span class="line">	output: &#123;</span><br><span class="line">		filename: <span class="string">'bundle.js'</span>,					    <span class="comment">//打包输出名</span></span><br><span class="line">		path: path.resolve(__dirname, <span class="string">'dist'</span>)		<span class="comment">//打包输出地址</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="运行打包"><a href="#运行打包" class="headerlink" title="运行打包"></a>运行打包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>指定配置文件打包(webpackcongfig.js)</span><br><span class="line">npx webpack --config webpackcongfig.js</span><br><span class="line"><span class="meta">#</span>全局安装打包</span><br><span class="line">webpack index.js</span><br><span class="line"><span class="meta">#</span>项目安装打包</span><br><span class="line">npx webpack index.js</span><br><span class="line"><span class="meta">#</span>配置文件json:scripts打包</span><br><span class="line">npm run bundle</span><br></pre></td></tr></table></figure>
-<h4 id="打包的一些日志输出知识"><a href="#打包的一些日志输出知识" class="headerlink" title="打包的一些日志输出知识"></a>打包的一些日志输出知识</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Hash: 打包的唯一标识</span><br><span class="line">Version: webpack版本号</span><br><span class="line">Time: 打包时间</span><br><span class="line">Asset: 打包的文件名</span><br><span class="line">Size: 包的大小</span><br><span class="line">Chunk: 项目中所有打包的文件id</span><br><span class="line">Chunk: 打包生成的文件入口名</span><br></pre></td></tr></table></figure>
-
-          
+          <p>简单了解~环境搭建，安装及配置<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/19/webpack入门/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
