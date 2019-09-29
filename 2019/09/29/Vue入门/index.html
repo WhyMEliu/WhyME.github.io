@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Concurrency,">
+  <meta name="keywords" content="Vue,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="安全发布对象详解~">
-<meta name="keywords" content="Concurrency">
+<meta name="description" content="简介及使用方式~">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何安全发布对象？">
-<meta property="og:url" content="http://liupeng.world/2019/02/05/如何安全发布对象？/index.html">
+<meta property="og:title" content="Vue入门">
+<meta property="og:url" content="http://liupeng.world/2019/09/29/Vue入门/index.html">
 <meta property="og:site_name" content="PengˇBlog">
-<meta property="og:description" content="安全发布对象详解~">
+<meta property="og:description" content="简介及使用方式~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-05T15:52:47.682Z">
+<meta property="og:updated_time" content="2019-09-29T08:44:16.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何安全发布对象？">
-<meta name="twitter:description" content="安全发布对象详解~">
+<meta name="twitter:title" content="Vue入门">
+<meta name="twitter:description" content="简介及使用方式~">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://liupeng.world/2019/02/05/如何安全发布对象？/">
+  <link rel="canonical" href="http://liupeng.world/2019/09/29/Vue入门/">
 
 
 
 
 
-  <title>如何安全发布对象？ | PengˇBlog</title>
+  <title>Vue入门 | PengˇBlog</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liupeng.world/2019/02/05/如何安全发布对象？/">
+    <link itemprop="mainEntityOfPage" href="http://liupeng.world/2019/09/29/Vue入门/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="peng">
@@ -314,7 +314,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">如何安全发布对象？</h2>
+          <h2 class="post-title" itemprop="name headline">Vue入门</h2>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-05T23:25:00+08:00">
-                2019-02-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T16:37:00+08:00">
+                2019-09-29
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
 
@@ -366,7 +366,7 @@
 
           
           
-             <span id="/2019/02/05/如何安全发布对象？/" class="leancloud_visitors" data-flag-title="如何安全发布对象？">
+             <span id="/2019/09/29/Vue入门/" class="leancloud_visitors" data-flag-title="Vue入门">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  369
+                  1k
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -428,16 +428,12 @@
       
 
       
-        <p>安全发布对象详解~<br><a id="more"></a></p>
-<ul>
-<li>在静态初始化函数中初始化一个对象引用</li>
-<li>将对象的引用保存到volatile类型域或者AtomicReference对象中</li>
-<li>将对象的引用保存到某个正确构造对象的final类型域中</li>
-<li>将对象的引用保存到一个由锁保护的域中</li>
-</ul>
-<p>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 懒汉模式 -》 双重同步锁单例模式</span><br><span class="line"> * 单例实例在第一次使用时进行创建</span><br><span class="line"> */</span><br><span class="line">@ThreadSafe</span><br><span class="line">public class LazySingleton &#123;</span><br><span class="line"></span><br><span class="line">    // 私有构造函数</span><br><span class="line">    private LazySingleton() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    // 1、memory = allocate() 分配对象的内存空间</span><br><span class="line">    // 2、ctorInstance() 初始化对象</span><br><span class="line">    // 3、instance = memory 设置instance指向刚分配的内存</span><br><span class="line"></span><br><span class="line">    // 单例对象 volatile + 双重检测机制 -&gt; 禁止指令重排</span><br><span class="line">    private volatile static LazySingleton instance = null;</span><br><span class="line"></span><br><span class="line">    // 静态的工厂方法</span><br><span class="line">    public static LazySingleton getInstance() &#123;</span><br><span class="line">        if (instance == null) &#123; // 双重检测机制       </span><br><span class="line">            synchronized (LazySingleton.class) &#123; // 同步锁</span><br><span class="line">                if (instance == null) &#123;</span><br><span class="line">                    instance = new LazySingleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 饿汉模式</span><br><span class="line"> * 单例实例在类装载时进行创建</span><br><span class="line"> */</span><br><span class="line">@ThreadSafe</span><br><span class="line">public class HungrySingleton &#123;</span><br><span class="line"></span><br><span class="line">    // 私有构造函数</span><br><span class="line">    private HungrySingleton() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    // 单例对象</span><br><span class="line">    private static HungrySingleton instance = new HungrySingleton();</span><br><span class="line"></span><br><span class="line">   /*</span><br><span class="line">    private static SingletonExample6 instance = null;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        instance = new SingletonExample6();</span><br><span class="line">    &#125;*/</span><br><span class="line">    </span><br><span class="line">    // 静态的工厂方法</span><br><span class="line">    public static HungrySingleton getInstance() &#123;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 枚举模式：最安全</span><br><span class="line"> */</span><br><span class="line">@ThreadSafe</span><br><span class="line">@Recommend</span><br><span class="line">public class EnumSingleton &#123;</span><br><span class="line"></span><br><span class="line">    // 私有构造函数</span><br><span class="line">    private EnumSingleton() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    public static EnumSingleton getInstance() &#123;</span><br><span class="line">        return Singleton.INSTANCE.getInstance();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private enum Singleton &#123;</span><br><span class="line">        INSTANCE;</span><br><span class="line">        </span><br><span class="line">        private EnumSingleton singleton;</span><br><span class="line">        </span><br><span class="line">        // JVM保证这个方法绝对只调用一次</span><br><span class="line">        Singleton() &#123;</span><br><span class="line">            singleton = new EnumSingleton();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        public EnumSingleton getInstance() &#123;</span><br><span class="line">            return singleton;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>简介及使用方式~<br><a id="more"></a><br><a href="https://cn.vuejs.org/v2/guide/" target="_blank" rel="noopener">中文社区</a></p>
+<h3 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h3><p>刚开始学习vue建议直接下载js包进行引入学习  <a href="https://cn.vuejs.org/js/vue.js" target="_blank" rel="noopener">开发版下载</a>  vue.放在当前目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;Hello World&lt;/title&gt;</span><br><span class="line">	&lt;script src=&apos;./vue.js&apos;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;&#123;&#123;content&#125;&#125;&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;div&gt;&#123;&#123;content&#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		//以前js的写法</span><br><span class="line">		//var dom = document.getElementById(&apos;app&apos;);</span><br><span class="line">		//dom.innerHTML= &apos;Hello World&apos;;</span><br><span class="line">		/*setTimeout(function() &#123;</span><br><span class="line">			var dom = document.getElementById(&apos;app&apos;);</span><br><span class="line">			dom.innerHTML= &apos;bye world&apos;;</span><br><span class="line">		&#125;)*/</span><br><span class="line"></span><br><span class="line">		//vue的写法</span><br><span class="line">		//创建一个实例</span><br><span class="line">		var app = new Vue(&#123;</span><br><span class="line">			el: &apos;#app&apos;,		//实例所管理的区域（id为app的区域）</span><br><span class="line">			data: &#123;</span><br><span class="line">				content: &apos;Hello World&apos;	//区域中所管理的数据</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		setTimeout(function() &#123;</span><br><span class="line">			app.$data.content = &apos;bye world&apos;</span><br><span class="line">		&#125;, 2000);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="ToDoList"><a href="#ToDoList" class="headerlink" title="ToDoList"></a>ToDoList</h3><h4 id="简单练习"><a href="#简单练习" class="headerlink" title="简单练习"></a>简单练习</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;TodoList&lt;/title&gt;</span><br><span class="line">	&lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">		&lt;input type=&quot;text&quot;  v-model=&quot;inputValue&quot;/&gt;				//模型双向绑定</span><br><span class="line">		&lt;button v-on:click=&quot;handleBtnClick&quot;&gt;提交&lt;/button&gt;		   //事件的触发</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;li v-for= &quot;item in list&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;				//循环</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		var app = new Vue(&#123;</span><br><span class="line">			el: &apos;#app&apos;,</span><br><span class="line">			data: &#123;</span><br><span class="line">				list: [],</span><br><span class="line">				inputValue: &apos;&apos;</span><br><span class="line">			&#125;,</span><br><span class="line">			methods: &#123;</span><br><span class="line">				handleBtnClick: function () &#123;</span><br><span class="line">					this.list.push(this.inputValue);</span><br><span class="line">					this.inputValue =&apos;&apos;;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&lt;/script&gt;  </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h4><h5 id="父组件向子组件传值"><a href="#父组件向子组件传值" class="headerlink" title="父组件向子组件传值"></a>父组件向子组件传值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;TodoList&lt;/title&gt;</span><br><span class="line">	&lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">		&lt;input type=&quot;text&quot;  v-model=&quot;inputValue&quot;/&gt;</span><br><span class="line">		&lt;button v-on:click=&quot;handleBtnClick&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;!--v-bind 向组件传递数 父-&gt;子组件 --&gt;</span><br><span class="line">			&lt;todo-item v-bind:content=&quot;item&quot; v-for= &quot;item in list&quot;&gt;&lt;/todo-item&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		//全局组件</span><br><span class="line">		/*Vue.component(&quot;TodoItem&quot;,&#123;</span><br><span class="line">			props:[&apos;content&apos;],					//接收父组件的传值</span><br><span class="line">			template: &quot;&lt;li&gt;&#123;&#123;content&#125;&#125;&lt;/li&gt;&quot;	//模板</span><br><span class="line">		&#125;)*/</span><br><span class="line"></span><br><span class="line">		//局部组件</span><br><span class="line">		var TodoItem = &#123;</span><br><span class="line">			props:[&apos;content&apos;],					//接收父组件的传值</span><br><span class="line">			template: &quot;&lt;li&gt;&#123;&#123;content&#125;&#125;&lt;/li&gt;&quot;	//模板</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		var app = new Vue(&#123;</span><br><span class="line">			el: &apos;#app&apos;,</span><br><span class="line">			components: &#123;						//局部组件注册</span><br><span class="line">				TodoItem: TodoItem</span><br><span class="line">			&#125;,</span><br><span class="line">			data: &#123;</span><br><span class="line">				list: [],</span><br><span class="line">				inputValue: &apos;&apos;</span><br><span class="line">			&#125;,</span><br><span class="line">			methods: &#123;</span><br><span class="line">				handleBtnClick: function () &#123;</span><br><span class="line">					this.list.push(this.inputValue);</span><br><span class="line">					this.inputValue =&apos;&apos;;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&lt;/script&gt;  </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="子组件向父组件传值"><a href="#子组件向父组件传值" class="headerlink" title="子组件向父组件传值"></a>子组件向父组件传值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;TodoList&lt;/title&gt;</span><br><span class="line">	&lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">		&lt;input type=&quot;text&quot;  v-model=&quot;inputValue&quot;/&gt;</span><br><span class="line">		&lt;button v-on:click=&quot;handleBtnClick&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;!--v-bind 向组件传递数 父-&gt;子组件 --&gt;</span><br><span class="line">			&lt;todo-item  v-bind:content=&quot;item&quot;</span><br><span class="line">						v-bind:index=&quot;index&quot; </span><br><span class="line">						v-for= &quot;(item,index) in list&quot; </span><br><span class="line">						@delete=&quot;handleItemDelete&quot;&gt;		&lt;!--接收子组件的触发事件--&gt;</span><br><span class="line">			&lt;/todo-item&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		//全局组件</span><br><span class="line">		/*Vue.component(&quot;TodoItem&quot;,&#123;</span><br><span class="line">			props:[&apos;content&apos;],					//接收父组件的传值</span><br><span class="line">			template: &quot;&lt;li&gt;&#123;&#123;content&#125;&#125;&lt;/li&gt;&quot;	//模板</span><br><span class="line">		&#125;)*/</span><br><span class="line"></span><br><span class="line">		//局部组件</span><br><span class="line">		var TodoItem = &#123;</span><br><span class="line">			props:[&apos;content&apos;,&apos;index&apos;],					//接收父组件的传值</span><br><span class="line">			template: &quot;&lt;li @click=&apos;handleBtnClickItemClick&apos;&gt;&#123;&#123;content&#125;&#125;&lt;/li&gt;&quot;,	//模板</span><br><span class="line">			methods:&#123;</span><br><span class="line">				handleBtnClickItemClick: function()&#123;</span><br><span class="line">					this.$emit(&quot;delete&quot;,this.index);	//子组件通过事件触发传给父组件</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		var app = new Vue(&#123;</span><br><span class="line">			el: &apos;#app&apos;,</span><br><span class="line">			components: &#123;						//局部组件注册</span><br><span class="line">				TodoItem: TodoItem</span><br><span class="line">			&#125;,</span><br><span class="line">			data: &#123;</span><br><span class="line">				list: [],</span><br><span class="line">				inputValue: &apos;&apos;</span><br><span class="line">			&#125;,</span><br><span class="line">			methods: &#123;</span><br><span class="line">				handleBtnClick: function () &#123;</span><br><span class="line">					this.list.push(this.inputValue);</span><br><span class="line">					this.inputValue =&apos;&apos;;</span><br><span class="line">				&#125;,</span><br><span class="line">				handleItemDelete: function(index)&#123;</span><br><span class="line">					this.list.splice(index,1)</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&lt;/script&gt;  </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -458,7 +454,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://liupeng.world/2019/02/05/如何安全发布对象？/" title="如何安全发布对象？">http://liupeng.world/2019/02/05/如何安全发布对象？/</a>
+    <a href="http://liupeng.world/2019/09/29/Vue入门/" title="Vue入门">http://liupeng.world/2019/09/29/Vue入门/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -473,7 +469,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Concurrency/" rel="tag"># Concurrency</a>
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
           
         </div>
       
@@ -486,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/05/发布对象线程安全问题/" rel="next" title="发布对象线程安全问题">
-                <i class="fa fa-chevron-left"></i> 发布对象线程安全问题
+              <a href="/2019/09/20/ElasticSearch入门/" rel="next" title="ElasticSearch入门">
+                <i class="fa fa-chevron-left"></i> ElasticSearch入门
               </a>
             
           </div>
@@ -495,10 +491,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/07/jdk，jre你真的懂吗？/" rel="prev" title="jdk，jre你真的懂吗？">
-                jdk，jre你真的懂吗？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -554,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -639,6 +640,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单介绍"><span class="nav-number">1.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ToDoList"><span class="nav-number">2.</span> <span class="nav-text">ToDoList</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单练习"><span class="nav-number">2.1.</span> <span class="nav-text">简单练习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件化"><span class="nav-number">2.2.</span> <span class="nav-text">组件化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#父组件向子组件传值"><span class="nav-number">2.2.1.</span> <span class="nav-text">父组件向子组件传值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#子组件向父组件传值"><span class="nav-number">2.2.2.</span> <span class="nav-text">子组件向父组件传值</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

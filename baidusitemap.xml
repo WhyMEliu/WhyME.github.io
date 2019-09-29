@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://liupeng.world/2019/09/20/ElasticSearch%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2019-09-20</lastmod>
+    <lastmod>2019-09-29</lastmod>
+  </url>  <url>
+    <loc>http://liupeng.world/2019/09/29/Vue%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2019-09-29</lastmod>
   </url>  <url>
     <loc>http://liupeng.world/2019/09/19/webpack%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2019-09-20</lastmod>
