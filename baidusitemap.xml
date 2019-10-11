@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://liupeng.world/2019/10/11/Vue%E7%BB%84%E4%BB%B6/</loc>
+    <lastmod>2019-10-11</lastmod>
+  </url>  <url>
+    <loc>http://liupeng.world/2019/09/30/Vue%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-09-30</lastmod>
+  </url>  <url>
     <loc>http://liupeng.world/2019/09/20/ElasticSearch%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2019-09-29</lastmod>
   </url>  <url>
