@@ -1,3 +1,5 @@
+http://liupeng.world/2019/10/14/Python的基本数据类型/
+http://liupeng.world/2019/10/14/Python导学及安装/
 http://liupeng.world/2019/10/11/Vue组件/
 http://liupeng.world/2019/09/30/Vue基础/
 http://liupeng.world/2019/09/29/Vue入门/
