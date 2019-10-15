@@ -1,3 +1,4 @@
+http://liupeng.world/2019/10/15/Python的变量与运算符/
 http://liupeng.world/2019/10/14/Python的基本数据类型/
 http://liupeng.world/2019/10/14/Python导学及安装/
 http://liupeng.world/2019/10/11/Vue组件/
