@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[杭州景点推荐]]></title>
+    <url>%2F2019%2F10%2F18%2F%E6%9D%AD%E5%B7%9E%E6%99%AF%E7%82%B9%E6%8E%A8%E8%8D%90%2F</url>
+    <content type="text"><![CDATA[杭州。。。。还是有东西可以玩的嘛~ 景致拱宸桥 可以从武林门码头坐水上巴士去 3元一个人 周末水上巴士时间营业时间会长点 夜景还可以 地址 胜利河美食街 这个要晚上去 然而门店不如从前了 特意去就没必要 地址 河坊街 购买纪念品好去处 哈哈哈 里面有几家厉害的珠宝工作室书店茶馆 不在正街 靠你慢慢找 地址 北山街 各种名人老宅 西湖博物馆在这条街 地址 纯真年代书吧 这个书店在半山腰 要爬上去 不建议特意去 去西湖玩有空时准备去转转 地址 中国美术学院 浙江美术馆 国美 恒庐美术馆在这条街 地址&amp;addr=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E4%B8%8A%E5%9F%8E%E5%8C%BA%E5%8D%97%E5%B1%B1%E8%B7%AF218%E5%8F%B7&amp;ref=WeChat) 西溪国家湿地公园 风景区 可以坐摇橹船 有几家不错的酒店在内 里面河渚街有些小吃 美食街有一两家味道尚可 叫什么小镇 店名一时半会忘了 地址 西兴古镇 尚未开发的城中镇 整体居民为主 地址 良渚博物院 今年刚申遗成功 ～ 地址 杭州万科良良渚文化艺术中心 大屋顶 微信号：vankeletters 晓书馆、以及电影、小话剧还有一些活动 上这个公众号预约就是 地址 杭州菩提谷 杭州菩提谷 微信号：boutiquehouse 这家做的还不错 在周边山上 风景好的地方 感受原生态大自然优选这家 文艺塘栖古镇 这边有家老粮仓倒值得去看看 不过挺远 可以的话 自己租车去 地址&amp;ref=WeChat) 玉皇山 建议开车去 茶博物馆 琴谷在这边 地址 梅家坞 龙井一般去这买一块买 不过建议熟人陪着去 现在是老茶了 新茶清明节那阵买 买明前茶 地址 上天竺，中天竺，三天竺 烧香拜佛吃斋 推荐 地址 九溪烟树 适合步行拍照的美美哒的地方 地址&amp;ref=WeChat) 茅以升先生像 旁边的钱塘江大桥可以走一走。茅以升先生设计的 一百多年了 中日战争时 还被炸断过 旁边还有个六合塔 地址 城市阳台 这边比较洋气了 周末看灯光秀的地方。。。 跟西湖的喷泉秀不一样 地址 滨江樱花大道 樱花三四五月才有 空气好的时候可以从复兴桥段 起跑 至西兴桥段，骑单车也可以，早晨或晚上跑跑，白天有点吵 ，如果很早很早也不错，建议晚上吧，看看夜景，这一条吃宵夜的地方不少。 地址 金铂湾 一线江景这一片宵夜挺多, 滨江萧山那边比较现代 老城区保留了很多遗迹 城西景区空气相对好些 植物多些 比如西溪 比如良渚 地址 南湖路 老余杭也可以住个一两天 风景有南湖 遗迹运河南端 老桥 生活气息浓厚。吃的有家黄牛肉锅炒鸡好吃 地址 中国凉都黄牛肉馆&amp;addr=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E4%BD%99%E6%9D%AD%E5%8C%BA%E8%81%94%E5%85%B4%E8%B7%AF153%E5%8F%B7&amp;ref=WeChat) 仓前羊锅村 有车的话 周末可以安排羊锅 良渚这边去羊锅村也近 地址]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python的分支，循环与条件]]></title>
     <url>%2F2019%2F10%2F17%2FPython%E7%9A%84%E5%88%86%E6%94%AF%EF%BC%8C%E5%BE%AA%E7%8E%AF%E4%B8%8E%E6%9D%A1%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[了解条件，循环语句~ 什么是表达式 表达式（Expression）就是运算符（operator）和操作数（operand）所构成的序列 表达式的优先级 请自行百度~ 贴图太多网页卡 常用的Python开发软件 vscode sublime pycharm 条件控制语句1234567891011121314151617181920212223""" 一段小程序"""account = 'liupeng'password = '123456'print('please input account')user_account = input()print('please input password')user_password = input()if (user_account == account) and (password == user_password): print('验证通过~')else: print('验证失败~')if True: pass # pass 占位符elif: passelse: pass 循环语句1234567891011121314151617181920212223242526con = 0# 适用于递归while con &lt;= 10 : con += 1 print(con)else: print('nb~') # 主要是用来遍历/循环 序列或者集合,字典x = [[1,2,3,4],('a','b','c')]for a in x: for b in a: if b == 2: # continue break print(b)else: print('结束~') # for(i=1; i&lt;10; i++)&#123;&#125;# range() 起始，结束，步长for a in range(0,10,2): print(a,end=' | ')for a in range(10,0,-2): print(a,end=' | ')]]></content>
