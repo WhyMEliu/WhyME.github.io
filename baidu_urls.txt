@@ -1,3 +1,4 @@
+http://liupeng.world/2020/02/29/Python对象/
 http://liupeng.world/2019/11/18/Python的包，模块/
 http://liupeng.world/2019/11/08/Python函数/
 http://liupeng.world/2019/10/18/杭州景点推荐/
