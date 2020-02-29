@@ -5,9 +5,9 @@
   <subtitle>学习，生活</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://liupeng.world/"/>
+  <link href="https://whymeliu.github.io/"/>
   <updated>2020-02-29T08:31:14.209Z</updated>
-  <id>http://liupeng.world/</id>
+  <id>https://whymeliu.github.io/</id>
   
   <author>
     <name>peng</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Python对象</title>
-    <link href="http://liupeng.world/2020/02/29/Python%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://liupeng.world/2020/02/29/Python对象/</id>
+    <link href="https://whymeliu.github.io/2020/02/29/Python%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://whymeliu.github.io/2020/02/29/Python对象/</id>
     <published>2020-02-29T08:29:00.000Z</published>
     <updated>2020-02-29T08:31:14.209Z</updated>
     
@@ -31,17 +31,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://liupeng.world/categories/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://liupeng.world/tags/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python的包，模块及作用域</title>
-    <link href="http://liupeng.world/2019/11/18/Python%E7%9A%84%E5%8C%85%EF%BC%8C%E6%A8%A1%E5%9D%97/"/>
-    <id>http://liupeng.world/2019/11/18/Python的包，模块/</id>
+    <link href="https://whymeliu.github.io/2019/11/18/Python%E7%9A%84%E5%8C%85%EF%BC%8C%E6%A8%A1%E5%9D%97/"/>
+    <id>https://whymeliu.github.io/2019/11/18/Python的包，模块/</id>
     <published>2019-11-18T02:54:00.000Z</published>
     <updated>2019-11-18T02:56:15.395Z</updated>
     
@@ -53,17 +53,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://liupeng.world/categories/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://liupeng.world/tags/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python函数</title>
-    <link href="http://liupeng.world/2019/11/08/Python%E5%87%BD%E6%95%B0/"/>
-    <id>http://liupeng.world/2019/11/08/Python函数/</id>
+    <link href="https://whymeliu.github.io/2019/11/08/Python%E5%87%BD%E6%95%B0/"/>
+    <id>https://whymeliu.github.io/2019/11/08/Python函数/</id>
     <published>2019-11-08T06:49:00.000Z</published>
     <updated>2019-11-08T06:50:52.798Z</updated>
     
@@ -75,17 +75,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://liupeng.world/categories/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://liupeng.world/tags/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>杭州景点推荐</title>
-    <link href="http://liupeng.world/2019/10/18/%E6%9D%AD%E5%B7%9E%E6%99%AF%E7%82%B9%E6%8E%A8%E8%8D%90/"/>
-    <id>http://liupeng.world/2019/10/18/杭州景点推荐/</id>
+    <link href="https://whymeliu.github.io/2019/10/18/%E6%9D%AD%E5%B7%9E%E6%99%AF%E7%82%B9%E6%8E%A8%E8%8D%90/"/>
+    <id>https://whymeliu.github.io/2019/10/18/杭州景点推荐/</id>
     <published>2019-10-18T06:53:00.000Z</published>
     <updated>2019-10-18T07:50:11.082Z</updated>
     
@@ -97,17 +97,17 @@
     
     </summary>
     
-      <category term="生活" scheme="http://liupeng.world/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://whymeliu.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="生活" scheme="http://liupeng.world/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://whymeliu.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>Python的分支，循环与条件</title>
-    <link href="http://liupeng.world/2019/10/17/Python%E7%9A%84%E5%88%86%E6%94%AF%EF%BC%8C%E5%BE%AA%E7%8E%AF%E4%B8%8E%E6%9D%A1%E4%BB%B6/"/>
-    <id>http://liupeng.world/2019/10/17/Python的分支，循环与条件/</id>
+    <link href="https://whymeliu.github.io/2019/10/17/Python%E7%9A%84%E5%88%86%E6%94%AF%EF%BC%8C%E5%BE%AA%E7%8E%AF%E4%B8%8E%E6%9D%A1%E4%BB%B6/"/>
+    <id>https://whymeliu.github.io/2019/10/17/Python的分支，循环与条件/</id>
     <published>2019-10-17T02:29:00.000Z</published>
     <updated>2019-10-17T02:31:25.895Z</updated>
     
@@ -119,17 +119,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://liupeng.world/categories/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://liupeng.world/tags/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python的变量与运算符</title>
-    <link href="http://liupeng.world/2019/10/15/Python%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
-    <id>http://liupeng.world/2019/10/15/Python的变量与运算符/</id>
+    <link href="https://whymeliu.github.io/2019/10/15/Python%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>https://whymeliu.github.io/2019/10/15/Python的变量与运算符/</id>
     <published>2019-10-15T02:07:00.000Z</published>
     <updated>2019-10-15T02:09:35.584Z</updated>
     
@@ -141,17 +141,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://liupeng.world/categories/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://liupeng.world/tags/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python的基本数据类型</title>
-    <link href="http://liupeng.world/2019/10/14/Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://liupeng.world/2019/10/14/Python的基本数据类型/</id>
+    <link href="https://whymeliu.github.io/2019/10/14/Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://whymeliu.github.io/2019/10/14/Python的基本数据类型/</id>
     <published>2019-10-14T01:48:00.000Z</published>
     <updated>2019-10-14T01:50:44.247Z</updated>
     
@@ -163,17 +163,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://liupeng.world/categories/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://liupeng.world/tags/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python导学及安装</title>
-    <link href="http://liupeng.world/2019/10/14/Python%E5%AF%BC%E5%AD%A6%E5%8F%8A%E5%AE%89%E8%A3%85/"/>
-    <id>http://liupeng.world/2019/10/14/Python导学及安装/</id>
+    <link href="https://whymeliu.github.io/2019/10/14/Python%E5%AF%BC%E5%AD%A6%E5%8F%8A%E5%AE%89%E8%A3%85/"/>
+    <id>https://whymeliu.github.io/2019/10/14/Python导学及安装/</id>
     <published>2019-10-14T01:45:00.000Z</published>
     <updated>2019-10-14T01:47:29.069Z</updated>
     
@@ -185,17 +185,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://liupeng.world/categories/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://liupeng.world/tags/Python/"/>
+      <category term="Python" scheme="https://whymeliu.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Vue组件</title>
-    <link href="http://liupeng.world/2019/10/11/Vue%E7%BB%84%E4%BB%B6/"/>
-    <id>http://liupeng.world/2019/10/11/Vue组件/</id>
+    <link href="https://whymeliu.github.io/2019/10/11/Vue%E7%BB%84%E4%BB%B6/"/>
+    <id>https://whymeliu.github.io/2019/10/11/Vue组件/</id>
     <published>2019-10-11T07:35:00.000Z</published>
     <updated>2019-10-11T07:42:20.618Z</updated>
     
@@ -207,17 +207,17 @@
     
     </summary>
     
-      <category term="前端" scheme="http://liupeng.world/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whymeliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Vue" scheme="http://liupeng.world/tags/Vue/"/>
+      <category term="Vue" scheme="https://whymeliu.github.io/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>Vue基础</title>
-    <link href="http://liupeng.world/2019/09/30/Vue%E5%9F%BA%E7%A1%80/"/>
-    <id>http://liupeng.world/2019/09/30/Vue基础/</id>
+    <link href="https://whymeliu.github.io/2019/09/30/Vue%E5%9F%BA%E7%A1%80/"/>
+    <id>https://whymeliu.github.io/2019/09/30/Vue基础/</id>
     <published>2019-09-30T07:30:00.000Z</published>
     <updated>2019-09-30T07:32:36.519Z</updated>
     
@@ -229,17 +229,17 @@
     
     </summary>
     
-      <category term="前端" scheme="http://liupeng.world/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whymeliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Vue" scheme="http://liupeng.world/tags/Vue/"/>
+      <category term="Vue" scheme="https://whymeliu.github.io/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>Vue入门</title>
-    <link href="http://liupeng.world/2019/09/29/Vue%E5%85%A5%E9%97%A8/"/>
-    <id>http://liupeng.world/2019/09/29/Vue入门/</id>
+    <link href="https://whymeliu.github.io/2019/09/29/Vue%E5%85%A5%E9%97%A8/"/>
+    <id>https://whymeliu.github.io/2019/09/29/Vue入门/</id>
     <published>2019-09-29T08:37:00.000Z</published>
     <updated>2019-09-29T08:44:16.196Z</updated>
     
@@ -251,17 +251,17 @@
     
     </summary>
     
-      <category term="前端" scheme="http://liupeng.world/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whymeliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Vue" scheme="http://liupeng.world/tags/Vue/"/>
+      <category term="Vue" scheme="https://whymeliu.github.io/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>ElasticSearch入门</title>
-    <link href="http://liupeng.world/2019/09/20/ElasticSearch%E5%85%A5%E9%97%A8/"/>
-    <id>http://liupeng.world/2019/09/20/ElasticSearch入门/</id>
+    <link href="https://whymeliu.github.io/2019/09/20/ElasticSearch%E5%85%A5%E9%97%A8/"/>
+    <id>https://whymeliu.github.io/2019/09/20/ElasticSearch入门/</id>
     <published>2019-09-20T08:20:00.000Z</published>
     <updated>2019-09-29T08:47:08.333Z</updated>
     
@@ -273,17 +273,17 @@
     
     </summary>
     
-      <category term="后端" scheme="http://liupeng.world/categories/%E5%90%8E%E7%AB%AF/"/>
+      <category term="后端" scheme="https://whymeliu.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
     
     
-      <category term="ElasticSearch" scheme="http://liupeng.world/tags/ElasticSearch/"/>
+      <category term="ElasticSearch" scheme="https://whymeliu.github.io/tags/ElasticSearch/"/>
     
   </entry>
   
   <entry>
     <title>Webpack安装及使用</title>
-    <link href="http://liupeng.world/2019/09/19/webpack%E5%85%A5%E9%97%A8/"/>
-    <id>http://liupeng.world/2019/09/19/webpack入门/</id>
+    <link href="https://whymeliu.github.io/2019/09/19/webpack%E5%85%A5%E9%97%A8/"/>
+    <id>https://whymeliu.github.io/2019/09/19/webpack入门/</id>
     <published>2019-09-19T09:11:00.000Z</published>
     <updated>2019-09-20T08:27:08.448Z</updated>
     
@@ -295,17 +295,17 @@
     
     </summary>
     
-      <category term="前端" scheme="http://liupeng.world/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whymeliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="webpack" scheme="http://liupeng.world/tags/webpack/"/>
+      <category term="webpack" scheme="https://whymeliu.github.io/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>BIO,NIO,AIO写法记录</title>
-    <link href="http://liupeng.world/2019/02/24/BIO-NIO-AIO%E5%86%99%E6%B3%95%E8%AE%B0%E5%BD%95/"/>
-    <id>http://liupeng.world/2019/02/24/BIO-NIO-AIO写法记录/</id>
+    <link href="https://whymeliu.github.io/2019/02/24/BIO-NIO-AIO%E5%86%99%E6%B3%95%E8%AE%B0%E5%BD%95/"/>
+    <id>https://whymeliu.github.io/2019/02/24/BIO-NIO-AIO写法记录/</id>
     <published>2019-02-24T10:21:00.000Z</published>
     <updated>2019-02-24T11:55:57.559Z</updated>
     
@@ -317,17 +317,17 @@
     
     </summary>
     
-      <category term="Java" scheme="http://liupeng.world/categories/Java/"/>
+      <category term="Java" scheme="https://whymeliu.github.io/categories/Java/"/>
     
     
-      <category term="IO" scheme="http://liupeng.world/tags/IO/"/>
+      <category term="IO" scheme="https://whymeliu.github.io/tags/IO/"/>
     
   </entry>
   
   <entry>
     <title>Linux常用命令</title>
-    <link href="http://liupeng.world/2019/02/17/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://liupeng.world/2019/02/17/Linux常用命令/</id>
+    <link href="https://whymeliu.github.io/2019/02/17/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://whymeliu.github.io/2019/02/17/Linux常用命令/</id>
     <published>2019-02-17T02:07:00.000Z</published>
     <updated>2019-02-17T09:40:12.031Z</updated>
     
@@ -339,17 +339,17 @@
     
     </summary>
     
-      <category term="Linux" scheme="http://liupeng.world/categories/Linux/"/>
+      <category term="Linux" scheme="https://whymeliu.github.io/categories/Linux/"/>
     
     
-      <category term="command" scheme="http://liupeng.world/tags/command/"/>
+      <category term="command" scheme="https://whymeliu.github.io/tags/command/"/>
     
   </entry>
   
   <entry>
     <title>OSI参考模型图</title>
-    <link href="http://liupeng.world/2019/02/13/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B%E5%9B%BE/"/>
-    <id>http://liupeng.world/2019/02/13/OSI参考模型图/</id>
+    <link href="https://whymeliu.github.io/2019/02/13/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B%E5%9B%BE/"/>
+    <id>https://whymeliu.github.io/2019/02/13/OSI参考模型图/</id>
     <published>2019-02-13T13:25:29.000Z</published>
     <updated>2019-02-13T13:27:44.184Z</updated>
     
@@ -366,8 +366,8 @@
   
   <entry>
     <title>ReentrantLock与锁</title>
-    <link href="http://liupeng.world/2019/02/10/ReentrantLock%E4%B8%8E%E9%94%81/"/>
-    <id>http://liupeng.world/2019/02/10/ReentrantLock与锁/</id>
+    <link href="https://whymeliu.github.io/2019/02/10/ReentrantLock%E4%B8%8E%E9%94%81/"/>
+    <id>https://whymeliu.github.io/2019/02/10/ReentrantLock与锁/</id>
     <published>2019-02-10T02:00:29.000Z</published>
     <updated>2019-02-10T02:14:05.128Z</updated>
     
@@ -384,8 +384,8 @@
   
   <entry>
     <title>Java线程类测试</title>
-    <link href="http://liupeng.world/2019/02/08/Java%E7%BA%BF%E7%A8%8B%E7%B1%BB%E6%B5%8B%E8%AF%95/"/>
-    <id>http://liupeng.world/2019/02/08/Java线程类测试/</id>
+    <link href="https://whymeliu.github.io/2019/02/08/Java%E7%BA%BF%E7%A8%8B%E7%B1%BB%E6%B5%8B%E8%AF%95/"/>
+    <id>https://whymeliu.github.io/2019/02/08/Java线程类测试/</id>
     <published>2019-02-08T09:43:00.000Z</published>
     <updated>2019-02-08T12:59:55.435Z</updated>
     
@@ -397,15 +397,15 @@
     
     </summary>
     
-      <category term="Java" scheme="http://liupeng.world/categories/Java/"/>
+      <category term="Java" scheme="https://whymeliu.github.io/categories/Java/"/>
     
     
   </entry>
   
   <entry>
     <title>Java线程封闭</title>
-    <link href="http://liupeng.world/2019/02/08/Java%E7%BA%BF%E7%A8%8B%E5%B0%81%E9%97%AD/"/>
-    <id>http://liupeng.world/2019/02/08/Java线程封闭/</id>
+    <link href="https://whymeliu.github.io/2019/02/08/Java%E7%BA%BF%E7%A8%8B%E5%B0%81%E9%97%AD/"/>
+    <id>https://whymeliu.github.io/2019/02/08/Java线程封闭/</id>
     <published>2019-02-08T07:59:00.000Z</published>
     <updated>2019-02-08T08:10:26.750Z</updated>
     
@@ -417,15 +417,15 @@
     
     </summary>
     
-      <category term="Java" scheme="http://liupeng.world/categories/Java/"/>
+      <category term="Java" scheme="https://whymeliu.github.io/categories/Java/"/>
     
     
   </entry>
   
   <entry>
     <title>Java不可变对象</title>
-    <link href="http://liupeng.world/2019/02/07/java%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://liupeng.world/2019/02/07/java不可变对象/</id>
+    <link href="https://whymeliu.github.io/2019/02/07/java%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://whymeliu.github.io/2019/02/07/java不可变对象/</id>
     <published>2019-02-07T14:53:00.000Z</published>
     <updated>2019-02-07T15:04:12.184Z</updated>
     
@@ -437,15 +437,15 @@
     
     </summary>
     
-      <category term="Java" scheme="http://liupeng.world/categories/Java/"/>
+      <category term="Java" scheme="https://whymeliu.github.io/categories/Java/"/>
     
     
   </entry>
   
   <entry>
     <title>jdk，jre你真的懂吗？</title>
-    <link href="http://liupeng.world/2019/02/07/jdk%EF%BC%8Cjre%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82%E5%90%97%EF%BC%9F/"/>
-    <id>http://liupeng.world/2019/02/07/jdk，jre你真的懂吗？/</id>
+    <link href="https://whymeliu.github.io/2019/02/07/jdk%EF%BC%8Cjre%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82%E5%90%97%EF%BC%9F/"/>
+    <id>https://whymeliu.github.io/2019/02/07/jdk，jre你真的懂吗？/</id>
     <published>2019-02-07T14:19:00.000Z</published>
     <updated>2019-02-07T14:40:01.384Z</updated>
     
@@ -458,15 +458,15 @@
     
     </summary>
     
-      <category term="Java" scheme="http://liupeng.world/categories/Java/"/>
+      <category term="Java" scheme="https://whymeliu.github.io/categories/Java/"/>
     
     
   </entry>
   
   <entry>
     <title>如何安全发布对象？</title>
-    <link href="http://liupeng.world/2019/02/05/%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E5%8F%91%E5%B8%83%E5%AF%B9%E8%B1%A1%EF%BC%9F/"/>
-    <id>http://liupeng.world/2019/02/05/如何安全发布对象？/</id>
+    <link href="https://whymeliu.github.io/2019/02/05/%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E5%8F%91%E5%B8%83%E5%AF%B9%E8%B1%A1%EF%BC%9F/"/>
+    <id>https://whymeliu.github.io/2019/02/05/如何安全发布对象？/</id>
     <published>2019-02-05T15:25:00.000Z</published>
     <updated>2019-02-05T15:52:47.682Z</updated>
     
@@ -478,17 +478,17 @@
     
     </summary>
     
-      <category term="Java" scheme="http://liupeng.world/categories/Java/"/>
+      <category term="Java" scheme="https://whymeliu.github.io/categories/Java/"/>
     
     
-      <category term="Concurrency" scheme="http://liupeng.world/tags/Concurrency/"/>
+      <category term="Concurrency" scheme="https://whymeliu.github.io/tags/Concurrency/"/>
     
   </entry>
   
   <entry>
     <title>发布对象线程安全问题</title>
-    <link href="http://liupeng.world/2019/02/05/%E5%8F%91%E5%B8%83%E5%AF%B9%E8%B1%A1%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/"/>
-    <id>http://liupeng.world/2019/02/05/发布对象线程安全问题/</id>
+    <link href="https://whymeliu.github.io/2019/02/05/%E5%8F%91%E5%B8%83%E5%AF%B9%E8%B1%A1%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/"/>
+    <id>https://whymeliu.github.io/2019/02/05/发布对象线程安全问题/</id>
     <published>2019-02-05T14:33:00.000Z</published>
     <updated>2019-02-05T15:53:10.825Z</updated>
     
@@ -500,17 +500,17 @@
     
     </summary>
     
-      <category term="Java" scheme="http://liupeng.world/categories/Java/"/>
+      <category term="Java" scheme="https://whymeliu.github.io/categories/Java/"/>
     
     
-      <category term="Concurrency" scheme="http://liupeng.world/tags/Concurrency/"/>
+      <category term="Concurrency" scheme="https://whymeliu.github.io/tags/Concurrency/"/>
     
   </entry>
   
   <entry>
     <title>新年快乐</title>
-    <link href="http://liupeng.world/2019/02/05/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/"/>
-    <id>http://liupeng.world/2019/02/05/新年快乐/</id>
+    <link href="https://whymeliu.github.io/2019/02/05/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/"/>
+    <id>https://whymeliu.github.io/2019/02/05/新年快乐/</id>
     <published>2019-02-04T16:46:00.000Z</published>
     <updated>2019-02-04T17:17:50.600Z</updated>
     
@@ -522,15 +522,15 @@
     
     </summary>
     
-      <category term="生活" scheme="http://liupeng.world/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://whymeliu.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>HashMap？面试？我是谁？我在哪</title>
-    <link href="http://liupeng.world/2019/02/04/HashMap%EF%BC%9F%E9%9D%A2%E8%AF%95%EF%BC%9F%E6%88%91%E6%98%AF%E8%B0%81%EF%BC%9F%E6%88%91%E5%9C%A8%E5%93%AA/"/>
-    <id>http://liupeng.world/2019/02/04/HashMap？面试？我是谁？我在哪/</id>
+    <link href="https://whymeliu.github.io/2019/02/04/HashMap%EF%BC%9F%E9%9D%A2%E8%AF%95%EF%BC%9F%E6%88%91%E6%98%AF%E8%B0%81%EF%BC%9F%E6%88%91%E5%9C%A8%E5%93%AA/"/>
+    <id>https://whymeliu.github.io/2019/02/04/HashMap？面试？我是谁？我在哪/</id>
     <published>2019-02-04T09:11:44.000Z</published>
     <updated>2019-02-04T09:25:17.796Z</updated>
     
@@ -547,8 +547,8 @@
   
   <entry>
     <title>Apache Bench</title>
-    <link href="http://liupeng.world/2019/02/03/ApacheBench/"/>
-    <id>http://liupeng.world/2019/02/03/ApacheBench/</id>
+    <link href="https://whymeliu.github.io/2019/02/03/ApacheBench/"/>
+    <id>https://whymeliu.github.io/2019/02/03/ApacheBench/</id>
     <published>2019-02-03T08:43:00.000Z</published>
     <updated>2019-02-04T08:04:50.439Z</updated>
     
@@ -560,15 +560,15 @@
     
     </summary>
     
-      <category term="工具" scheme="http://liupeng.world/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://whymeliu.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
   
   <entry>
     <title>开篇博客</title>
-    <link href="http://liupeng.world/2019/02/03/%E5%BC%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://liupeng.world/2019/02/03/开篇博客/</id>
+    <link href="https://whymeliu.github.io/2019/02/03/%E5%BC%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://whymeliu.github.io/2019/02/03/开篇博客/</id>
     <published>2019-02-03T01:23:00.000Z</published>
     <updated>2019-03-01T02:59:08.030Z</updated>
     
@@ -581,7 +581,7 @@
     
     </summary>
     
-      <category term="生活" scheme="http://liupeng.world/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://whymeliu.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
