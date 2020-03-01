@@ -1,3 +1,5 @@
+https://whymeliu.github.io/2020/03/01/Python正则表达式/
+https://whymeliu.github.io/2020/03/01/正则表达式全/
 https://whymeliu.github.io/2020/02/29/Python对象/
 https://whymeliu.github.io/2019/11/18/Python的包，模块/
 https://whymeliu.github.io/2019/11/08/Python函数/
